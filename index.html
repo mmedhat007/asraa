@@ -81,9 +81,8 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
 .hs .l{font-size:8.5px;color:rgba(255,255,255,.28);margin-top:4px;text-transform:uppercase;letter-spacing:1.2px;font-weight:600}
 
 /* ── HOW IT WORKS (pill chips) ── */
-.hiw-chips{display:flex;gap:8px;padding:0 16px;margin-bottom:10px;overflow-x:auto;scrollbar-width:none}
-.hiw-chips::-webkit-scrollbar{display:none}
-.hiw-chip{display:flex;align-items:center;gap:7px;padding:9px 15px;border-radius:100px;border:1px solid var(--border);background:var(--white);font-size:11.5px;font-weight:600;color:var(--t3);cursor:pointer;white-space:nowrap;transition:all .18s;box-shadow:var(--sh);flex-shrink:0}
+.hiw-chips{display:flex;gap:8px;padding:0 16px;margin-bottom:10px}
+.hiw-chip{display:flex;align-items:center;justify-content:center;gap:6px;padding:9px 10px;border-radius:100px;border:1px solid var(--border);background:var(--white);font-size:10.5px;font-weight:600;color:var(--t3);cursor:pointer;transition:all .18s;box-shadow:var(--sh);flex:1;text-align:center}
 .hiw-chip.on{background:var(--black);border-color:var(--black);color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.2)}
 .hiw-chip-n{font-size:9px;font-weight:800;opacity:.5}
 .hiw-desc-box{margin:0 16px 14px;background:var(--white);border:1px solid var(--border);border-radius:var(--rsm);padding:14px 16px;box-shadow:var(--sh);min-height:52px}
@@ -386,25 +385,23 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
       <div class="feat-live"><div class="live-dot"></div>Live</div>
     </div>
   </div>
-  <div style="margin:0 16px 12px">
-    <div class="feat" onclick="openDeal(0)">
-      <div class="feat-inner">
-        <div class="feat-hdr">
-          <div class="feat-logo">QI</div>
-          <div>
-            <div class="feat-name">Qist</div>
-            <div class="feat-sub">FinTech · Seed · EGP 8M target</div>
-          </div>
+  <div class="feat" onclick="openDeal(0)">
+    <div class="feat-inner">
+      <div class="feat-hdr">
+        <div class="feat-logo">QI</div>
+        <div>
+          <div class="feat-name">Qist</div>
+          <div class="feat-sub">FinTech · Seed · EGP 8M target</div>
         </div>
-        <div class="feat-chart"><canvas id="featChart"></canvas></div>
-        <div class="feat-divider"></div>
-        <div class="feat-meta">
-          <div class="fm"><div class="v">EGP 210K</div><div class="l">Monthly Rev</div></div>
-          <div class="fm"><div class="v">19%</div><div class="l">Funded</div></div>
-          <div class="fm"><div class="v">142</div><div class="l">Investors</div></div>
-        </div>
-        <button class="feat-btn" onclick="event.stopPropagation();openDeal(0)">View Deal →</button>
       </div>
+      <div class="feat-chart"><canvas id="featChart"></canvas></div>
+      <div class="feat-divider"></div>
+      <div class="feat-meta">
+        <div class="fm"><div class="v">EGP 210K</div><div class="l">Monthly Rev</div></div>
+        <div class="fm"><div class="v">19%</div><div class="l">Funded</div></div>
+        <div class="fm"><div class="v">142</div><div class="l">Investors</div></div>
+      </div>
+      <button class="feat-btn" onclick="event.stopPropagation();openDeal(0)">View Deal →</button>
     </div>
   </div>
 
