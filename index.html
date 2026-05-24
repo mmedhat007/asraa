@@ -323,6 +323,129 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
 .done-btn{padding:13px 36px;background:var(--black);color:#fff;border:none;border-radius:9px;font-size:13.5px;font-weight:800;cursor:pointer;font-family:'Inter',sans-serif}
 .form-input{width:100%;padding:13px 14px;border:1px solid var(--border);border-radius:9px;font-size:14px;font-family:'Inter',sans-serif;background:var(--white);color:var(--t1);outline:none;transition:border-color .2s;font-weight:400;box-shadow:var(--sh)}
 .form-input:focus{border-color:var(--black)}
+
+/* ── UPDATES FEED ── */
+.updates-hero{margin:16px 16px 16px;background:var(--black);border-radius:var(--r);padding:22px;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.updates-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 85% 10%,rgba(124,58,237,.28) 0%,transparent 60%),radial-gradient(ellipse 55% 50% at 10% 90%,rgba(37,99,235,.2) 0%,transparent 60%);pointer-events:none}
+.uh-inner{position:relative;z-index:1}
+.uh-tag{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.28);margin-bottom:8px;font-weight:700}
+.uh-title{font-size:22px;font-weight:900;color:#fff;letter-spacing:-.7px;line-height:1.1}
+.uh-sub{font-size:11px;color:rgba(255,255,255,.35);margin-top:5px;line-height:1.6}
+.updates-feed{padding:0 16px;display:flex;flex-direction:column;gap:10px}
+.uf-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh)}
+.uf-header{display:flex;align-items:center;gap:10px;padding:14px 14px 10px}
+.uf-logo{width:36px;height:36px;border-radius:9px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;color:var(--black);flex-shrink:0;letter-spacing:-.5px}
+.uf-logo-asraa{background:var(--black);color:#fff;border-color:var(--black)}
+.uf-meta{flex:1;min-width:0}
+.uf-source{font-size:12.5px;font-weight:700;letter-spacing:-.2px}
+.uf-time{font-size:10px;color:var(--t3);margin-top:1px;font-weight:500}
+.uf-type{font-size:7.5px;padding:2.5px 8px;border-radius:100px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
+.uft-founder{background:var(--seed-bg);color:var(--seed);border:1px solid rgba(37,99,235,.2)}
+.uft-milestone{background:var(--grn-bg);color:var(--grn);border:1px solid rgba(5,150,105,.2)}
+.uft-asraa{background:var(--black);color:#fff}
+.uft-document{background:var(--series-b-bg);color:var(--series-b);border:1px solid rgba(217,119,6,.2)}
+.uft-news{background:var(--pre-a-bg);color:var(--pre-a);border:1px solid rgba(124,58,237,.2)}
+.uf-body{padding:0 14px 14px;font-size:12.5px;color:var(--t2);line-height:1.72}
+.uf-stat-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.uf-stat{display:flex;flex-direction:column;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 12px;min-width:70px}
+.uf-stat .v{font-size:14px;font-weight:800;letter-spacing:-.4px;color:var(--t1)}
+.uf-stat .l{font-size:8.5px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-top:2px}
+.uf-cta{display:block;width:100%;padding:11px;border-radius:0 0 var(--r) var(--r);border:none;border-top:1px solid var(--border);background:var(--bg);color:var(--black);font-size:12px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;text-align:center;transition:.15s}
+.uf-cta:active{background:var(--black);color:#fff}
+.uf-milestone-banner{padding:12px 14px;background:var(--grn-bg);border-top:1px solid rgba(5,150,105,.15);display:flex;align-items:center;gap:10px}
+.uf-milestone-banner svg{width:16px;height:16px;stroke:var(--grn);fill:none;stroke-width:2;flex-shrink:0}
+.uf-milestone-text{font-size:11.5px;color:var(--grn);font-weight:700}
+
+/* ── MY POSITIONS ── */
+.pos-summary{margin:16px 16px 14px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px;box-shadow:var(--sh)}
+.ps-lbl{font-size:9px;text-transform:uppercase;letter-spacing:1.6px;color:var(--t3);font-weight:700;margin-bottom:5px}
+.ps-val{font-size:30px;font-weight:900;letter-spacing:-1.2px;color:var(--t1);line-height:1}
+.ps-note{font-size:10.5px;color:var(--t3);margin-top:6px;line-height:1.5}
+.ps-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
+.psg{text-align:left}
+.psg .v{font-size:13px;font-weight:800;letter-spacing:-.3px}
+.psg .l{font-size:8px;color:var(--t3);margin-top:2px;font-weight:700;text-transform:uppercase;letter-spacing:.6px}
+.pos-list{padding:0 16px;display:flex;flex-direction:column;gap:10px}
+.pos-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;box-shadow:var(--sh)}
+.pc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:16px}
+.pc-logo{width:42px;height:42px;border-radius:10px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px;color:var(--black);flex-shrink:0;letter-spacing:-.5px}
+.pc-info{flex:1;min-width:0}
+.pc-name{font-size:14px;font-weight:800;letter-spacing:-.4px}
+.pc-sector{font-size:9.5px;color:var(--t3);font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin-top:2px}
+.pc-status{font-size:7.5px;padding:3px 9px;border-radius:100px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;flex-shrink:0;margin-top:2px}
+.pcs-escrow{background:var(--series-b-bg);color:var(--series-b);border:1px solid rgba(217,119,6,.2)}
+.pcs-spv{background:var(--seed-bg);color:var(--seed);border:1px solid rgba(37,99,235,.2)}
+.pcs-active{background:var(--grn-bg);color:var(--grn);border:1px solid rgba(5,150,105,.2)}
+.pcs-exited{background:var(--bg);color:var(--t2);border:1px solid var(--border)}
+.pc-timeline{display:flex;align-items:flex-start;margin-bottom:14px;position:relative}
+.pc-tstep{display:flex;flex-direction:column;align-items:center;flex:1;position:relative;z-index:1}
+.pc-tline{position:absolute;top:6px;left:50%;right:-50%;height:1.5px;background:var(--border);z-index:0}
+.pc-tstep:last-child .pc-tline{display:none}
+.pc-tstep.done .pc-tline,.pc-tstep.current .pc-tline{background:var(--black)}
+.pc-dot{width:13px;height:13px;border-radius:50%;background:var(--border);border:2px solid var(--white);box-shadow:0 0 0 1.5px var(--border);margin-bottom:5px;flex-shrink:0}
+.pc-tstep.done .pc-dot{background:var(--black);box-shadow:0 0 0 1.5px var(--black)}
+.pc-tstep.current .pc-dot{background:var(--black);box-shadow:0 0 0 3px rgba(12,12,10,.1),0 0 0 1.5px var(--black)}
+.pc-tlbl{font-size:7.5px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:.3px;text-align:center;line-height:1.3;max-width:58px}
+.pc-tstep.done .pc-tlbl,.pc-tstep.current .pc-tlbl{color:var(--t1)}
+.pc-metrics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.pcm{background:var(--bg);border-radius:7px;padding:10px;text-align:center;border:1px solid var(--border)}
+.pcm .v{font-size:11.5px;font-weight:800;letter-spacing:-.2px}
+.pcm .l{font-size:8px;color:var(--t3);margin-top:2px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+
+/* ── DEAL ROOM ── */
+.dr-video{background:var(--black);height:210px;position:relative;overflow:hidden;cursor:pointer;flex-shrink:0}
+.dr-video-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 80%,rgba(37,99,235,.5) 0%,transparent 55%),radial-gradient(ellipse 70% 55% at 85% 15%,rgba(5,150,105,.4) 0%,transparent 55%)}
+.dr-video-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.dr-play{width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
+.dr-play svg{width:20px;height:20px;fill:#fff;margin-left:3px}
+.dr-video-lbl{font-size:10.5px;color:rgba(255,255,255,.45);letter-spacing:.6px;font-weight:600}
+.dr-video-dur{font-size:9px;color:rgba(255,255,255,.3);font-weight:600;letter-spacing:.4px}
+.dr-content{padding:0 18px}
+.dr-co-row{display:flex;align-items:center;gap:13px;padding:16px 0 14px;border-bottom:1px solid var(--border);margin-bottom:16px}
+.dr-m-logo{width:50px;height:50px;border-radius:13px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:var(--black);flex-shrink:0;letter-spacing:-.5px}
+.dr-m-name{font-size:22px;font-weight:900;letter-spacing:-.7px}
+.dr-m-meta{font-size:10px;color:var(--t3);margin-top:3px;font-weight:600}
+.dr-stage-row{display:flex;align-items:center;gap:7px;margin-top:5px}
+.dr-section{margin-bottom:18px}
+.dr-slabel{font-size:9px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--t3);margin-bottom:9px}
+.dr-body{font-size:12.5px;color:var(--t2);line-height:1.75}
+.dr-kv-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dr-kv{background:var(--bg);border-radius:9px;padding:13px;border:1px solid var(--border)}
+.dr-kv .v{font-size:16px;font-weight:800;letter-spacing:-.5px;color:var(--t1)}
+.dr-kv .l{font-size:8.5px;color:var(--t3);margin-top:3px;font-weight:700;text-transform:uppercase;letter-spacing:.6px}
+.dr-kv-note{font-size:9px;color:var(--t3);margin-top:2px;font-style:italic;line-height:1.4}
+.dr-team{display:flex;flex-direction:column;gap:12px}
+.dr-member{display:flex;align-items:flex-start;gap:12px}
+.dr-av{width:40px;height:40px;border-radius:10px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px;color:var(--black);flex-shrink:0;letter-spacing:-.5px}
+.dr-member-name{font-size:13px;font-weight:700;letter-spacing:-.2px}
+.dr-member-role{font-size:10px;color:var(--t3);margin-top:2px;font-weight:600;text-transform:uppercase;letter-spacing:.4px}
+.dr-member-bg{font-size:11px;color:var(--t2);margin-top:3px;line-height:1.5}
+.dr-proceeds{display:flex;flex-direction:column;gap:9px}
+.dr-proc-row{display:flex;align-items:center;gap:10px}
+.dr-proc-label{font-size:11.5px;color:var(--t2);width:140px;flex-shrink:0}
+.dr-proc-bar-wrap{flex:1;height:4px;background:var(--border);border-radius:3px;overflow:hidden}
+.dr-proc-bar{height:100%;background:var(--black);border-radius:3px}
+.dr-proc-pct{font-size:11px;font-weight:800;min-width:34px;text-align:right;color:var(--t1);letter-spacing:-.2px}
+.dr-terms{background:var(--bg);border-radius:var(--rsm);border:1px solid var(--border);overflow:hidden}
+.dr-term-row{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;border-bottom:1px solid var(--border)}
+.dr-term-row:last-child{border-bottom:none}
+.dr-term-k{font-size:11.5px;color:var(--t2);font-weight:500}
+.dr-term-v{font-size:12px;font-weight:700;color:var(--t1);letter-spacing:-.1px}
+.dr-docs{display:flex;flex-direction:column;gap:8px}
+.dr-doc{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--bg);border:1px solid var(--border);border-radius:9px;cursor:pointer;transition:.15s}
+.dr-doc:active{border-color:var(--black)}
+.dr-doc-icon{width:34px;height:34px;border-radius:8px;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dr-doc-icon svg{width:15px;height:15px;stroke:var(--t2);fill:none;stroke-width:1.8}
+.dr-doc-name{flex:1;font-size:12px;font-weight:600}
+.dr-doc-sub{font-size:10px;color:var(--t3);margin-top:1px}
+.dr-lock{font-size:8px;padding:2.5px 8px;border-radius:100px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;border:1px solid var(--border);background:var(--white);color:var(--t3);white-space:nowrap}
+.dr-risk{background:var(--red-bg);border:1px solid rgba(220,38,38,.12);border-radius:var(--rsm);padding:14px;font-size:11px;color:#991B1B;line-height:1.75}
+.dr-invest-wrap{padding:16px 18px 24px;border-top:1px solid var(--border);margin-top:4px}
+.dr-fund-bar{margin-bottom:14px}
+.dr-fund-top{display:flex;justify-content:space-between;font-size:10.5px;color:var(--t2);margin-bottom:6px;font-weight:600}
+.dr-fund-top span:last-child{font-weight:800;color:var(--t1)}
+.dr-f-pbar{height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.dr-f-pfill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--black),#404040)}
 </style>
 </head>
 <body>
@@ -426,45 +549,21 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
 <!-- ══════════════════════════════════════
      PORTFOLIO
 ══════════════════════════════════════ -->
-<div id="sc-portfolio" class="sc">
+<div id="sc-updates" class="sc">
   <div class="topbar">
     <div class="logo">ASRAA</div>
-    <div class="screen-label">Portfolio</div>
+    <div class="screen-label">Updates</div>
   </div>
 
-  <div class="port-hero">
-    <div class="ph-inner">
-      <div class="ph-lbl">Total Portfolio Value</div>
-      <div class="ph-val">EGP 128,400</div>
-      <div class="ph-sub">Updated today · 4 holdings</div>
-      <div class="ph-ret">▲ +34.2% YTD</div>
-      <div class="ph-grid">
-        <div class="phg"><div class="v">EGP 95,600</div><div class="l">Deployed</div></div>
-        <div class="phg"><div class="v">EGP 32,800</div><div class="l">Gain</div></div>
-        <div class="phg"><div class="v">0</div><div class="l">Exits</div></div>
-      </div>
+  <div class="updates-hero">
+    <div class="uh-inner">
+      <div class="uh-tag">Your Private Channel</div>
+      <div class="uh-title">What's happening<br>with your deals.</div>
+      <div class="uh-sub">Founder messages, milestones, and platform news — only from companies you've backed.</div>
     </div>
   </div>
 
-  <div class="chart-box">
-    <div class="cb-row">
-      <span class="cb-title">Portfolio Growth</span>
-      <div class="cb-filters">
-        <button class="cf on" onclick="switchPF(this,'3m')">3M</button>
-        <button class="cf" onclick="switchPF(this,'6m')">6M</button>
-        <button class="cf" onclick="switchPF(this,'ytd')">YTD</button>
-        <button class="cf" onclick="switchPF(this,'1y')">1Y</button>
-      </div>
-    </div>
-    <div class="cb-canvas"><canvas id="portChart"></canvas></div>
-    <div class="cb-legend">
-      <div class="cleg"><div class="cleg-dot" style="background:var(--black)"></div>Portfolio Value</div>
-      <div class="cleg"><div class="cleg-dot" style="background:var(--border-s)"></div>Capital Deployed</div>
-    </div>
-  </div>
-
-  <span class="eyebrow" style="margin-bottom:10px">Holdings</span>
-  <div class="holdings" id="holdings-list"></div>
+  <div class="updates-feed" id="updates-feed"></div>
   <div style="height:16px"></div>
 </div>
 
@@ -472,17 +571,24 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
 <!-- ══════════════════════════════════════
      INVESTMENTS
 ══════════════════════════════════════ -->
-<div id="sc-investments" class="sc">
+<div id="sc-positions" class="sc">
   <div class="topbar">
     <div class="logo">ASRAA</div>
-    <div class="screen-label">Investments</div>
+    <div class="screen-label">My Positions</div>
   </div>
-  <div class="inv-tabs">
-    <button class="itab on" onclick="switchIT(this,'active')">Active</button>
-    <button class="itab" onclick="switchIT(this,'pending')">Pending</button>
-    <button class="itab" onclick="switchIT(this,'exited')">Exited</button>
+
+  <div class="pos-summary">
+    <div class="ps-lbl">Total Capital Committed</div>
+    <div class="ps-val">EGP 115,600</div>
+    <div class="ps-note">Across 5 active SPVs · last updated May 2025</div>
+    <div class="ps-grid">
+      <div class="psg"><div class="v">5</div><div class="l">Positions</div></div>
+      <div class="psg"><div class="v">1</div><div class="l">Exit</div></div>
+      <div class="psg"><div class="v">6 yrs</div><div class="l">Avg Hold</div></div>
+    </div>
   </div>
-  <div class="inv-list" id="inv-list"></div>
+
+  <div class="pos-list" id="positions-list"></div>
   <div style="height:16px"></div>
 </div>
 
@@ -611,16 +717,16 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
 <!-- ══ BOTTOM NAV ══ -->
 <nav class="bnav">
   <button class="ni on" onclick="go('discover',this)">
-    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
     <span>Discover</span>
   </button>
-  <button class="ni" onclick="go('portfolio',this)">
-    <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-    <span>Portfolio</span>
+  <button class="ni" onclick="go('updates',this)">
+    <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+    <span>Updates</span>
   </button>
-  <button class="ni" onclick="go('investments',this)">
-    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-    <span>Deals</span>
+  <button class="ni" onclick="go('positions',this)">
+    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+    <span>Positions</span>
   </button>
   <button class="ni" onclick="go('settings',this)">
     <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -643,65 +749,169 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
 </div><!-- /app -->
 
 <script>
-/* ── DATA ── */
-const STAGE_CLASS = {
-  seed: 'badge-seed',
-  'pre-a': 'badge-pre-a',
-  'series-a': 'badge-series-a',
-  'series-b': 'badge-series-b'
-};
-const STAGE_LABEL = {
-  seed: 'Seed',
-  'pre-a': 'Pre-Series A',
-  'series-a': 'Series A',
-  'series-b': 'Series B'
-};
+/* ── CONSTANTS ── */
+const STAGE_CLASS={seed:'badge-seed','pre-a':'badge-pre-a','series-a':'badge-series-a','series-b':'badge-series-b'};
+const STAGE_LABEL={seed:'Seed','pre-a':'Pre-Series A','series-a':'Series A','series-b':'Series B'};
 
-const DEALS = [
+/* ── DEALS DATA (enriched for pitch room) ── */
+const DEALS=[
   {id:0,name:'Qist',abbr:'QI',sector:'FinTech',stageKey:'seed',daysLeft:47,
    desc:"BNPL and micro-lending for Egypt's 35M unbanked adults via mobile wallet. No credit bureau required.",
-   target:8000000,raised:1500000,min:10000,
-   ytd:[100,105,112,108,120,132,128,140,155,162,170,182],mrr:'EGP 210K',investors:142},
+   target:8000000,raised:1500000,min:10000,investors:142,
+   ytd:[100,105,112,108,120,132,128,140,155,162,170,182],mrr:'EGP 210K',
+   thesis:"Egypt has 35 million adults with no access to formal credit. Qist bypasses the credit bureau entirely — using mobile wallet history and behavioural data to underwrite micro-loans and BNPL for daily purchases. Fully digital, no branch required. The underbanked isn't a charity case; it's the largest untapped credit market in Africa.",
+   model:"Qist charges a 3–6% origination fee on each loan and earns a merchant discount rate of 1.8% on BNPL transactions. Average ticket size is EGP 1,200 with a 28-day term. Default rate sits at 2.1% — below the industry average of 4.8%.",
+   traction:[
+     {v:'EGP 210K',l:'Monthly Revenue',note:'as of Apr 2025'},
+     {v:'48,000',l:'Active Borrowers',note:'as of Apr 2025'},
+     {v:'2.1%',l:'Default Rate',note:'industry avg 4.8%'},
+     {v:'EGP 1,200',l:'Avg Ticket Size',note:'28-day terms'},
+   ],
+   team:[
+     {abbr:'KA',name:'Karim Amer',role:'CEO & Co-Founder',bg:'Ex-CIB Head of Digital Lending. 11 years in Egyptian retail banking.'},
+     {abbr:'NS',name:'Nada Saleh',role:'CTO & Co-Founder',bg:'Previously led engineering at Fawry. MSc Computer Science, AUC.'},
+     {abbr:'MR',name:'Mohamed Ragab',role:'CFO',bg:'Former VP Finance at Banque Misr. Chartered accountant with 9 years in credit risk.'},
+   ],
+   proceeds:[
+     {l:'Loan Book Growth',pct:55},
+     {l:'Technology & Product',pct:20},
+     {l:'Regulatory & Compliance',pct:15},
+     {l:'Operations & Hiring',pct:10},
+   ],
+   terms:{min:'EGP 10,000',carry:'20%',proRata:'Yes — investors over EGP 50K',close:'30 Jun 2025'},
+  },
   {id:1,name:'Basket',abbr:'BK',sector:'FoodTech',stageKey:'pre-a',daysLeft:22,
    desc:"AI-powered local restaurant aggregator across 6 governorates. 2.8M monthly orders, zero delivery fleet.",
-   target:5000000,raised:3200000,min:5000,
-   ytd:[100,108,115,122,118,130,138,145,152,160,158,170],mrr:'EGP 380K',investors:310},
+   target:5000000,raised:3200000,min:5000,investors:310,
+   ytd:[100,108,115,122,118,130,138,145,152,160,158,170],mrr:'EGP 380K',
+   thesis:"Egypt's food delivery market is dominated by two international players who charge restaurants 25–30% commission. Basket charges 12% and solves the logistics problem differently — it doesn't own a single bike. Instead, Basket aggregates existing third-party couriers and routes orders dynamically. Lower cost, faster scale, better margins for everyone.",
+   model:"Commission of 12% on each order placed through the platform. Restaurants also pay a EGP 499/month subscription for analytics and marketing tools. Average order value is EGP 185. Basket processes 2.8M orders monthly across Cairo, Alexandria, Giza, Mansoura, Assiut, and Luxor.",
+   traction:[
+     {v:'EGP 380K',l:'Monthly Revenue',note:'as of Apr 2025'},
+     {v:'2.8M',l:'Monthly Orders',note:'as of Apr 2025'},
+     {v:'4,200',l:'Partner Restaurants',note:'across 6 governorates'},
+     {v:'12%',l:'Commission Rate',note:'vs 25–30% market avg'},
+   ],
+   team:[
+     {abbr:'OM',name:'Omar Mostafa',role:'CEO & Co-Founder',bg:'Ex-Careem Operations Lead Egypt. Built the Egypt city ops from 0 to 2M trips.'},
+     {abbr:'SA',name:'Sara Aziz',role:'CPO & Co-Founder',bg:'Former product manager at Swvl. Launched Swvl\'s B2B product in Egypt and Kenya.'},
+   ],
+   proceeds:[
+     {l:'City Expansion',pct:45},
+     {l:'Tech & AI Platform',pct:25},
+     {l:'Restaurant Partnerships',pct:20},
+     {l:'Working Capital',pct:10},
+   ],
+   terms:{min:'EGP 5,000',carry:'20%',proRata:'No',close:'15 Jun 2025'},
+  },
   {id:2,name:'Pulse',abbr:'PL',sector:'HealthTech',stageKey:'series-a',daysLeft:91,
    desc:"Telehealth and home nursing connecting patients to 3,400 verified clinicians across Egypt. 200K active patients.",
-   target:15000000,raised:11200000,min:25000,
-   ytd:[100,103,110,118,125,130,138,134,142,150,158,162],mrr:'EGP 920K',investors:489},
+   target:15000000,raised:11200000,min:25000,investors:489,
+   ytd:[100,103,110,118,125,130,138,134,142,150,158,162],mrr:'EGP 920K',
+   thesis:"Egypt has a severe shortage of doctors per capita — 0.8 per 1,000 people vs a WHO target of 2.5. The gap is widest outside Cairo. Pulse connects verified clinicians to patients via video, phone, and home visits. The home nursing product — Egypt's first at scale — is the differentiated moat. Insurance coverage has just begun.",
+   model:"Three revenue lines: (1) EGP 150–350 per teleconsultation, Pulse takes 25%. (2) EGP 800–2,000 per home nursing visit, Pulse takes 30%. (3) B2B contracts with 12 corporate clients for employee health benefits at EGP 3,500/employee/year.",
+   traction:[
+     {v:'EGP 920K',l:'Monthly Revenue',note:'as of Apr 2025'},
+     {v:'200K',l:'Active Patients',note:'as of Apr 2025'},
+     {v:'3,400',l:'Verified Clinicians',note:'doctors, nurses, physios'},
+     {v:'12',l:'Corporate Clients',note:'B2B health contracts'},
+   ],
+   team:[
+     {abbr:'HE',name:'Dr. Hana El-Shamy',role:'CEO & Co-Founder',bg:'Practicing physician turned entrepreneur. Ran Egypt\'s largest private home nursing network before building Pulse.'},
+     {abbr:'AR',name:'Ahmed Rizk',role:'CTO & Co-Founder',bg:'Ex-Google engineer. Led platform engineering for Google Health in MENA before returning to Egypt.'},
+     {abbr:'LM',name:'Layla Mansour',role:'COO',bg:'Former COO at Vezeeta. Scaled Vezeeta from 50K to 2M appointments per year.'},
+   ],
+   proceeds:[
+     {l:'Home Nursing Expansion',pct:40},
+     {l:'Technology Platform',pct:25},
+     {l:'B2B Sales',pct:20},
+     {l:'Regulatory & Compliance',pct:15},
+   ],
+   terms:{min:'EGP 25,000',carry:'20%',proRata:'Yes — all investors',close:'31 Aug 2025'},
+  },
   {id:3,name:'Beacon',abbr:'BC',sector:'EdTech',stageKey:'pre-a',daysLeft:34,
    desc:"B2B school management SaaS in 620 Egyptian K-12 schools. 95% annual contract renewal rate.",
-   target:6000000,raised:4800000,min:5000,
-   ytd:[100,112,120,128,135,140,148,155,160,168,175,180],mrr:'EGP 540K',investors:276},
+   target:6000000,raised:4800000,min:5000,investors:276,
+   ytd:[100,112,120,128,135,140,148,155,160,168,175,180],mrr:'EGP 540K',
+   thesis:"Egyptian private schools collect EGP 2–8B in fees annually but run on WhatsApp and paper. Beacon replaces that with a full school management operating system: attendance, fees, grades, parent communication, and government reporting — all in Arabic. 95% renewal tells you the product is sticky. The market is massive and almost entirely untouched.",
+   model:"Annual SaaS contracts ranging EGP 8,000–35,000 per school depending on size. Average contract: EGP 21,000/year. 620 schools under contract. Churn: 5% annually. Expansion revenue from premium modules (parent app, transport, canteen) adds 18% average upsell per school.",
+   traction:[
+     {v:'EGP 540K',l:'Monthly Revenue',note:'as of Apr 2025'},
+     {v:'620',l:'Schools',note:'K-12 across Egypt'},
+     {v:'95%',l:'Renewal Rate',note:'annual contracts'},
+     {v:'18%',l:'Upsell Rate',note:'premium modules'},
+   ],
+   team:[
+     {abbr:'AH',name:'Ali Hassan',role:'CEO & Co-Founder',bg:'Former Ministry of Education technology advisor. Spent 6 years digitising government school systems before going private.'},
+     {abbr:'DK',name:'Dina Khalil',role:'CTO',bg:'Software architect at McKinsey Digital Egypt. Led 3 major EdTech builds across the GCC before returning to Cairo.'},
+   ],
+   proceeds:[
+     {l:'Sales & Partnerships',pct:40},
+     {l:'Product Development',pct:30},
+     {l:'Customer Success',pct:20},
+     {l:'Operations',pct:10},
+   ],
+   terms:{min:'EGP 5,000',carry:'20%',proRata:'No',close:'30 Jun 2025'},
+  },
 ];
 
-const HOLDINGS = [
-  {name:'Taager',abbr:'TG',sector:'FinTech',invested:25000,val:35250,ret:'+41.0%',pos:true,weight:26},
-  {name:'Fuse',abbr:'FS',sector:'Logistics',invested:10000,val:12800,ret:'+28.0%',pos:true,weight:10},
-  {name:'Telda',abbr:'TD',sector:'FreightTech',invested:15000,val:17850,ret:'+19.0%',pos:true,weight:16},
-  {name:'Arc',abbr:'AR',sector:'FinTech',invested:45600,val:43800,ret:'-3.9%',pos:false,weight:48},
+/* ── UPDATES FEED DATA ── */
+const UPDATES=[
+  {type:'asraa',typeLabel:'From ASRAA',logo:'AS',logoClass:'uf-logo-asraa',source:'ASRAA',time:'3 hours ago',
+   body:"New deal just dropped: <strong>Pulse</strong> has opened their Series A to the platform. 200K active patients, EGP 920K MRR. Review the deal room before spots fill.",
+   cta:'View Pulse Deal'},
+  {type:'document',typeLabel:'Document Ready',logo:'QI',source:'Qist',time:'5 hours ago',
+   body:"Your SPV Subscription Agreement for Qist (Seed Round) is ready for review and signature. Please sign within 7 days to confirm your position in the SPV.",
+   cta:'Review & Sign'},
+  {type:'founder',typeLabel:'Founder Update',logo:'TG',source:'Taager',time:'2 days ago',
+   body:"Q1 2025 Letter from the CEO\n\nWe crossed EGP 1.2M in monthly GMV for the first time in March — a 31% increase quarter-on-quarter. We've added 3 new enterprise clients and expanded our logistics network to 4 new cities. We remain on track for our Series B close by Q4 2025.",
+   stats:[{v:'EGP 1.2M',l:'Q1 Monthly GMV'},{v:'+31%',l:'QoQ Growth'},{v:'3',l:'New Clients'}]},
+  {type:'milestone',typeLabel:'Milestone',logo:'FS',source:'Fuse',time:'4 days ago',
+   body:"Fuse just launched in 3 new governorates — Assiut, Minya, and Sohag. This takes their operational footprint to 9 cities and positions them as the only freight platform with Upper Egypt coverage.",
+   milestone:'Now live in 9 cities across Egypt 🎉'},
+  {type:'news',typeLabel:'News',logo:'TD',source:'Telda',time:'1 week ago',
+   body:"Telda was named one of Egypt's Top 10 Logistics Startups to Watch in 2025 by Wamda Research. The piece specifically highlights their AI-powered route optimisation engine, which has cut average delivery time by 22%.",
+   cta:'Read Article'},
+  {type:'founder',typeLabel:'Founder Update',logo:'AR',source:'Arc',time:'2 weeks ago',
+   body:"Q1 2025 — A Difficult Quarter\n\nWe want to be straight with you. Q1 was below plan. Revenue came in at EGP 890K vs a target of EGP 1.1M. The shortfall came from two enterprise contracts being delayed into Q2. Both have since signed. We are adjusting our Q2 targets accordingly and will share a revised forecast by end of May.",
+   stats:[{v:'EGP 890K',l:'Q1 Revenue'},{v:'EGP 1.1M',l:'Target'},{v:'Q2',l:'Contracts Moved'}]},
+  {type:'asraa',typeLabel:'From ASRAA',logo:'AS',logoClass:'uf-logo-asraa',source:'ASRAA',time:'3 weeks ago',
+   body:"Reminder: FRA regulations require all investors to complete annual re-certification before 30 June 2025. Your KYC and accredited investor status will be verified automatically — no action needed unless your financial situation has changed.",
+  },
 ];
 
-const INVS = {
-  active:[
-    {name:'Taager',abbr:'TG',sector:'FinTech',stage:'Series A',inv:'EGP 25,000',val:'EGP 35,250',ret:'+41%',pos:true,date:'Mar 2024',status:'active'},
-    {name:'Fuse',abbr:'FS',sector:'Logistics',stage:'Pre-Series B',inv:'EGP 10,000',val:'EGP 12,800',ret:'+28%',pos:true,date:'Jun 2024',status:'active'},
-    {name:'Telda',abbr:'TD',sector:'FreightTech',stage:'Series A',inv:'EGP 15,000',val:'EGP 17,850',ret:'+19%',pos:true,date:'Aug 2024',status:'active'},
-    {name:'Arc',abbr:'AR',sector:'FinTech',stage:'Series B',inv:'EGP 45,600',val:'EGP 43,800',ret:'-3.9%',pos:false,date:'Jan 2024',status:'active'},
-  ],
-  pending:[
-    {name:'Basket',abbr:'BK',sector:'FoodTech',stage:'Pre-Series A',inv:'EGP 8,000',val:'Pending',ret:'—',pos:true,date:'Nov 2024',status:'pending'},
-  ],
-  exited:[
-    {name:'Cashnow',abbr:'CN',sector:'FinTech',stage:'Series B',inv:'EGP 12,000',val:'EGP 18,600',ret:'+55%',pos:true,date:'Feb 2023',status:'exited'},
-  ]
-};
+/* ── POSITIONS DATA ── */
+const POSITIONS=[
+  {abbr:'TG',name:'Taager',sector:'FinTech · Series A',committed:'EGP 25,000',date:'Mar 2024',
+   status:'active',statusLabel:'Capital Deployed',statusClass:'pcs-active',
+   stage:['done','done','done'],stageLabels:['Committed','SPV Formed','Deployed'],
+   metrics:[{v:'EGP 25,000',l:'Committed'},{v:'Mar 2024',l:'Date In'},{v:'~6 yrs',l:'Est. Hold'}]},
+  {abbr:'FS',name:'Fuse',sector:'Logistics · Pre-Series B',committed:'EGP 10,000',date:'Jun 2024',
+   status:'active',statusLabel:'Capital Deployed',statusClass:'pcs-active',
+   stage:['done','done','done'],stageLabels:['Committed','SPV Formed','Deployed'],
+   metrics:[{v:'EGP 10,000',l:'Committed'},{v:'Jun 2024',l:'Date In'},{v:'~5 yrs',l:'Est. Hold'}]},
+  {abbr:'TD',name:'Telda',sector:'FreightTech · Series A',committed:'EGP 15,000',date:'Aug 2024',
+   status:'active',statusLabel:'Capital Deployed',statusClass:'pcs-active',
+   stage:['done','done','done'],stageLabels:['Committed','SPV Formed','Deployed'],
+   metrics:[{v:'EGP 15,000',l:'Committed'},{v:'Aug 2024',l:'Date In'},{v:'~5 yrs',l:'Est. Hold'}]},
+  {abbr:'AR',name:'Arc',sector:'FinTech · Series B',committed:'EGP 45,600',date:'Jan 2024',
+   status:'active',statusLabel:'Capital Deployed',statusClass:'pcs-active',
+   stage:['done','done','done'],stageLabels:['Committed','SPV Formed','Deployed'],
+   metrics:[{v:'EGP 45,600',l:'Committed'},{v:'Jan 2024',l:'Date In'},{v:'~4 yrs',l:'Est. Hold'}]},
+  {abbr:'BK',name:'Basket',sector:'FoodTech · Pre-Series A',committed:'EGP 8,000',date:'Nov 2024',
+   status:'spv',statusLabel:'SPV Being Formed',statusClass:'pcs-spv',
+   stage:['done','current',''],stageLabels:['Committed','SPV Forming','Deploy'],
+   metrics:[{v:'EGP 8,000',l:'Committed'},{v:'Nov 2024',l:'Date In'},{v:'Pending',l:'Deployment'}]},
+  {abbr:'CN',name:'Cashnow',sector:'FinTech · Series B',committed:'EGP 12,000',date:'Feb 2023',
+   status:'exited',statusLabel:'Exited',statusClass:'pcs-exited',
+   stage:['done','done','done'],stageLabels:['Committed','SPV Formed','Exited'],
+   metrics:[{v:'EGP 12,000',l:'Committed'},{v:'EGP 18,600',l:'Returned'},{v:'+55%',l:'Return'}]},
+];
 
-let portCI=null, dealCI=null, featCI=null;
+let featCI=null, dealCI=null;
 
 /* ── HOW IT WORKS ── */
-function setHiw(idx, chip) {
+function setHiw(idx,chip){
   document.querySelectorAll('.hiw-chip').forEach(c=>c.classList.remove('on'));
   document.querySelectorAll('.hiw-desc').forEach(d=>d.classList.remove('on'));
   chip.classList.add('on');
@@ -718,11 +928,11 @@ function go(id,btn){
   document.getElementById('sc-'+id).classList.add('on');
   btn.classList.add('on');
   document.querySelector('.content').scrollTop=0;
-  if(id==='portfolio'){setTimeout(()=>{drawPortChart();renderHoldings();},80);}
-  if(id==='investments'){renderInvList('active');document.querySelectorAll('.itab').forEach((b,i)=>{b.classList.toggle('on',i===0)});}
+  if(id==='updates')renderUpdates();
+  if(id==='positions')renderPositions();
 }
 
-/* ── RENDER DEALS ── */
+/* ── RENDER DEALS (card scroll) ── */
 function renderDeals(){
   document.getElementById('deal-scroll').innerHTML=DEALS.slice(1).map(d=>{
     const pct=Math.round(d.raised/d.target*100);
@@ -761,136 +971,174 @@ function drawFeatChart(){
   featCI=new Chart(ctx,{type:'line',data:{labels:Array(12).fill(''),datasets:[{data:DEALS[0].ytd,borderColor:'rgba(255,255,255,.7)',backgroundColor:'rgba(255,255,255,.06)',fill:true,tension:.45,pointRadius:0,borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{display:false}}}});
 }
 
-/* ── PORTFOLIO CHART ── */
-const PORT_DATA={
-  '3m':{labels:['Mar','Apr','May'],data:[116000,121000,128400],dep:95600},
-  '6m':{labels:['Dec','Jan','Feb','Mar','Apr','May'],data:[103400,108800,112000,116000,121000,128400],dep:95600},
-  'ytd':{labels:['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],data:[95600,98200,103400,101200,108800,112000,117600,120800,124200,127400,125800,128400],dep:95600},
-  '1y':{labels:["May'24",'Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr',"May'25"],data:[72000,78000,83000,87000,93000,98000,102000,107000,110000,116000,121000,125000,128400],dep:70000},
-};
-
-function drawPortChart(filter='3m'){
-  const ctx=document.getElementById('portChart');if(!ctx)return;
-  if(portCI)portCI.destroy();
-  const d=PORT_DATA[filter]||PORT_DATA['3m'];
-  portCI=new Chart(ctx,{type:'line',data:{labels:d.labels,datasets:[
-    {label:'Value',data:d.data,borderColor:'#0C0C0A',backgroundColor:'rgba(12,12,10,.04)',fill:true,tension:.45,pointRadius:2,pointBackgroundColor:'#0C0C0A',borderWidth:2},
-    {label:'Deployed',data:Array(d.labels.length).fill(d.dep),borderColor:'rgba(0,0,0,.18)',fill:false,tension:0,pointRadius:0,borderDash:[5,4],borderWidth:1.5}
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false,callbacks:{label:v=>'EGP '+Math.round(v.raw).toLocaleString()}}},scales:{x:{grid:{display:false},ticks:{font:{size:10,family:'Inter'},color:'#96968F'}},y:{grid:{color:'rgba(0,0,0,.04)'},ticks:{font:{size:10,family:'Inter'},color:'#96968F',callback:v=>'EGP '+(v/1000).toFixed(0)+'K'}}}}});
-}
-
-function switchPF(btn,f){
-  document.querySelectorAll('.cf').forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');
-  if(portCI){portCI.destroy();portCI=null;}
-  drawPortChart(f);
-}
-
-/* ── HOLDINGS ── */
-function renderHoldings(){
-  document.getElementById('holdings-list').innerHTML=HOLDINGS.map(h=>`
-    <div class="hi">
-      <div class="hi-logo">${h.abbr}</div>
-      <div class="hi-info">
-        <div class="hi-name">${h.name}</div>
-        <div class="hi-sub">${h.sector}</div>
-        <div class="alloc-bar"><div class="alloc-fill" style="width:${h.weight}%"></div></div>
+/* ── RENDER UPDATES ── */
+function renderUpdates(){
+  const typeClass={founder:'uft-founder',milestone:'uft-milestone',asraa:'uft-asraa',document:'uft-document',news:'uft-news'};
+  document.getElementById('updates-feed').innerHTML=UPDATES.map(u=>{
+    const statsHtml=u.stats?`<div class="uf-stat-row">${u.stats.map(s=>`<div class="uf-stat"><div class="v">${s.v}</div><div class="l">${s.l}</div></div>`).join('')}</div>`:'';
+    const milestoneHtml=u.milestone?`<div class="uf-milestone-banner"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><div class="uf-milestone-text">${u.milestone}</div></div>`:'';
+    const ctaHtml=u.cta?`<button class="uf-cta">${u.cta} →</button>`:'';
+    const logoClass=u.logoClass?`uf-logo ${u.logoClass}`:'uf-logo';
+    const bodyFormatted=u.body.replace(/\n\n/g,'</p><p style="margin-top:8px">').replace(/\n/g,'<br>');
+    return`<div class="uf-card">
+      <div class="uf-header">
+        <div class="${logoClass}">${u.logo}</div>
+        <div class="uf-meta">
+          <div class="uf-source">${u.source}</div>
+          <div class="uf-time">${u.time}</div>
+        </div>
+        <span class="uf-type ${typeClass[u.type]}">${u.typeLabel}</span>
       </div>
-      <div class="hi-right">
-        <div class="hi-val">EGP ${h.val.toLocaleString()}</div>
-        <div class="hi-ret ${h.pos?'pos':'neg'}">${h.ret}</div>
-      </div>
-    </div>`).join('');
+      <div class="uf-body"><p>${bodyFormatted}</p>${statsHtml}</div>
+      ${milestoneHtml}${ctaHtml}
+    </div>`;
+  }).join('');
 }
 
-/* ── INVESTMENTS ── */
-function switchIT(btn,tab){
-  document.querySelectorAll('.itab').forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');
-  renderInvList(tab);
-}
-
-function renderInvList(tab){
-  const items=INVS[tab]||[];
-  const sc={active:'s-act',pending:'s-pend',exited:'s-exit'};
-  const sl={active:'Active',pending:'Pending',exited:'Exited'};
-  document.getElementById('inv-list').innerHTML=items.length?items.map(inv=>`
-    <div class="iitem">
-      <div class="ii-top">
-        <div style="display:flex;align-items:center;gap:11px">
-          <div class="ii-logo">${inv.abbr}</div>
-          <div>
-            <div class="ii-name">${inv.name}</div>
-            <div class="ii-sec">${inv.sector} · ${inv.stage}</div>
+/* ── RENDER POSITIONS ── */
+function renderPositions(){
+  document.getElementById('positions-list').innerHTML=POSITIONS.map(p=>{
+    const timelineHtml=p.stage.map((s,i)=>`
+      <div class="pc-tstep ${s}">
+        <div class="pc-tline"></div>
+        <div class="pc-dot"></div>
+        <div class="pc-tlbl">${p.stageLabels[i]}</div>
+      </div>`).join('');
+    const metricsHtml=p.metrics.map(m=>`<div class="pcm"><div class="v">${m.v}</div><div class="l">${m.l}</div></div>`).join('');
+    return`<div class="pos-card">
+      <div class="pc-top">
+        <div style="display:flex;align-items:flex-start;gap:12px;flex:1">
+          <div class="pc-logo">${p.abbr}</div>
+          <div class="pc-info">
+            <div class="pc-name">${p.name}</div>
+            <div class="pc-sector">${p.sector}</div>
           </div>
         </div>
-        <div class="ii-status-wrap">
-          <span class="ii-status ${sc[inv.status]}">${sl[inv.status]}</span>
-          <div class="ii-date">${inv.date}</div>
-        </div>
+        <span class="pc-status ${p.statusClass}">${p.statusLabel}</span>
       </div>
-      <div class="ii-metrics">
-        <div class="iim"><div class="v">${inv.inv}</div><div class="l">Invested</div></div>
-        <div class="iim"><div class="v">${inv.val}</div><div class="l">Value</div></div>
-        <div class="iim"><div class="v" style="color:${inv.pos?'var(--grn)':'var(--red)'}">${inv.ret}</div><div class="l">Return</div></div>
-      </div>
-    </div>`).join(''):`<div style="text-align:center;padding:52px 20px;color:var(--t3)"><div style="font-size:13px;font-weight:700">No ${tab} investments</div></div>`;
+      <div class="pc-timeline">${timelineHtml}</div>
+      <div class="pc-metrics">${metricsHtml}</div>
+    </div>`;
+  }).join('');
 }
 
-/* ── DEAL MODAL ── */
+/* ── DEAL PITCH ROOM ── */
 function openDeal(id){
   const d=DEALS[id];
   const pct=Math.round(d.raised/d.target*100);
-  document.getElementById('modal-body').innerHTML=`
-    <div class="mi">
-      <div class="mclose-row">
-        <div class="m-stage-row">
-          <span class="m-stage">${d.sector}</span>
-          <span class="badge ${STAGE_CLASS[d.stageKey]}">${STAGE_LABEL[d.stageKey]}</span>
-        </div>
-        <button class="mclose" onclick="closeModal()"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-      </div>
-      <div class="m-co-row">
-        <div class="m-logo">${d.abbr}</div>
-        <div>
-          <div class="m-name">${d.name}</div>
-          <div class="m-sec">${d.investors} accredited investors · ${d.daysLeft} days left</div>
-        </div>
-      </div>
-      <div class="m-section-label">Overview</div>
-      <p class="m-desc">${d.desc}</p>
-      <div class="m-section-label">Key Metrics</div>
-      <div class="m-stats">
-        <div class="mst"><div class="sv">${d.mrr}</div><div class="sl">Monthly Rev</div></div>
-        <div class="mst"><div class="sv">${pct}%</div><div class="sl">Funded</div></div>
-        <div class="mst"><div class="sv">${d.investors}</div><div class="sl">Investors</div></div>
-      </div>
-      <div class="m-chart-lbl">Revenue Index — Last 12 Months</div>
-      <div class="m-chart"><canvas id="dealChart"></canvas></div>
-      <div class="m-prog-wrap">
-        <div class="m-prog-top">
-          <span>EGP ${(d.raised/1e6).toFixed(1)}M raised of EGP ${(d.target/1e6).toFixed(1)}M</span>
-          <span>${pct}%</span>
-        </div>
-        <div class="m-pbar"><div class="m-pfill" style="width:${pct}%"></div></div>
-      </div>
-      <div class="m-section-label">Your Investment</div>
-      <div class="m-inv-sec">
-        <div class="inv-lbl">Amount (EGP)</div>
-        <input type="number" class="inv-input" id="inv-amt" placeholder="Min EGP ${d.min.toLocaleString()}" min="${d.min}" step="500">
-        <div class="inv-hint">Minimum EGP ${d.min.toLocaleString()} · KYC-verified accredited investors only · Funds held in escrow until round closes</div>
-        <button class="inv-cta" onclick="submitInv(${d.id})">Queue Investment — Review &amp; Confirm</button>
-        <div class="m-risk">Startup investments are illiquid and high-risk. Capital at risk. Accredited investors under Egyptian Capital Market Law No. 95/1992 only.</div>
-      </div>
-    </div>`;
-  document.getElementById('modal').classList.add('on');
-  setTimeout(()=>drawDealChart(d),100);
-}
+  const tractHtml=d.traction.map(t=>`<div class="dr-kv"><div class="v">${t.v}</div><div class="l">${t.l}</div><div class="dr-kv-note">${t.note}</div></div>`).join('');
+  const teamHtml=d.team.map(m=>`<div class="dr-member"><div class="dr-av">${m.abbr}</div><div><div class="dr-member-name">${m.name}</div><div class="dr-member-role">${m.role}</div><div class="dr-member-bg">${m.bg}</div></div></div>`).join('');
+  const procHtml=d.proceeds.map(p=>`<div class="dr-proc-row"><div class="dr-proc-label">${p.l}</div><div class="dr-proc-bar-wrap"><div class="dr-proc-bar" style="width:${p.pct}%"></div></div><div class="dr-proc-pct">${p.pct}%</div></div>`).join('');
 
-function drawDealChart(d){
-  const ctx=document.getElementById('dealChart');if(!ctx)return;
-  if(dealCI)dealCI.destroy();
-  dealCI=new Chart(ctx,{type:'line',data:{labels:['J','F','M','A','M','J','J','A','S','O','N','D'],datasets:[{data:d.ytd,borderColor:'#0C0C0A',backgroundColor:'rgba(12,12,10,.04)',fill:true,tension:.45,pointRadius:3,pointBackgroundColor:'#0C0C0A',borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:v=>'Index: '+v.raw}}},scales:{x:{grid:{display:false},ticks:{font:{size:10,family:'Inter'},color:'#96968F'}},y:{grid:{color:'rgba(0,0,0,.04)'},ticks:{font:{size:10,family:'Inter'},color:'#96968F'}}}}});
+  document.getElementById('modal-body').innerHTML=`
+    <div class="mhandle" style="margin:12px auto 0"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px 0">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:9.5px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:1px">${d.sector}</span>
+        <span class="badge ${STAGE_CLASS[d.stageKey]}">${STAGE_LABEL[d.stageKey]}</span>
+      </div>
+      <button class="mclose" onclick="closeModal()"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+
+    <div class="dr-video" onclick="alert('Video player coming in production build.')">
+      <div class="dr-video-bg"></div>
+      <div class="dr-video-inner">
+        <div class="dr-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="#fff"/></svg></div>
+        <div class="dr-video-lbl">Founder Pitch — ${d.name}</div>
+        <div class="dr-video-dur">Watch · 4 min</div>
+      </div>
+    </div>
+
+    <div class="dr-content">
+      <div class="dr-co-row">
+        <div class="dr-m-logo">${d.abbr}</div>
+        <div>
+          <div class="dr-m-name">${d.name}</div>
+          <div class="dr-m-meta">${d.investors} investors committed · ${d.daysLeft} days left</div>
+          <div class="dr-stage-row">
+            <div class="dc-live"><div class="dc-live-dot"></div><span style="font-size:9px;color:var(--t3);font-weight:700;letter-spacing:.4px;text-transform:uppercase">Live</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dr-section">
+        <div class="dr-slabel">The Opportunity</div>
+        <div class="dr-body">${d.thesis}</div>
+      </div>
+
+      <div class="dr-section">
+        <div class="dr-slabel">Business Model</div>
+        <div class="dr-body">${d.model}</div>
+      </div>
+
+      <div class="dr-section">
+        <div class="dr-slabel">Traction</div>
+        <div class="dr-kv-grid">${tractHtml}</div>
+      </div>
+
+      <div class="dr-section">
+        <div class="dr-slabel">Team</div>
+        <div class="dr-team">${teamHtml}</div>
+      </div>
+
+      <div class="dr-section">
+        <div class="dr-slabel">Use of Proceeds</div>
+        <div class="dr-proceeds">${procHtml}</div>
+      </div>
+
+      <div class="dr-section">
+        <div class="dr-slabel">SPV Terms</div>
+        <div class="dr-terms">
+          <div class="dr-term-row"><span class="dr-term-k">Minimum Ticket</span><span class="dr-term-v">${d.terms.min}</span></div>
+          <div class="dr-term-row"><span class="dr-term-k">ASRAA Carry</span><span class="dr-term-v">${d.terms.carry} on profits</span></div>
+          <div class="dr-term-row"><span class="dr-term-k">Pro-Rata Rights</span><span class="dr-term-v">${d.terms.proRata}</span></div>
+          <div class="dr-term-row"><span class="dr-term-k">Round Closes</span><span class="dr-term-v">${d.terms.close}</span></div>
+          <div class="dr-term-row"><span class="dr-term-k">Structure</span><span class="dr-term-v">Equity via SPV</span></div>
+          <div class="dr-term-row"><span class="dr-term-k">Escrow</span><span class="dr-term-v">Third-party, regulated</span></div>
+        </div>
+      </div>
+
+      <div class="dr-section">
+        <div class="dr-slabel">Documents</div>
+        <div class="dr-docs">
+          <div class="dr-doc">
+            <div class="dr-doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div><div class="dr-doc-name">Investor Deck</div><div class="dr-doc-sub">PDF · 18 slides</div></div>
+            <span class="dr-lock">🔒 KYC Required</span>
+          </div>
+          <div class="dr-doc">
+            <div class="dr-doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div><div class="dr-doc-name">Financial Model</div><div class="dr-doc-sub">Excel · 3-year forecast</div></div>
+            <span class="dr-lock">🔒 KYC Required</span>
+          </div>
+          <div class="dr-doc">
+            <div class="dr-doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div><div class="dr-doc-name">SPV Term Sheet</div><div class="dr-doc-sub">PDF · legal document</div></div>
+            <span class="dr-lock">🔒 KYC Required</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="dr-section">
+        <div class="dr-risk">⚠️ <strong>Risk Disclosure:</strong> This is a private placement in an early-stage company. Your investment is illiquid and there is no guaranteed return. You may lose the entire amount committed. ASRAA SPVs are structured under Egyptian Contract Law. Accredited investors only (net worth ≥ EGP 5M or annual income ≥ EGP 1M).</div>
+      </div>
+    </div>
+
+    <div class="dr-invest-wrap">
+      <div class="dr-fund-bar">
+        <div class="dr-fund-top">
+          <span>EGP ${(d.raised/1e6).toFixed(1)}M raised of EGP ${(d.target/1e6).toFixed(1)}M target</span>
+          <span>${pct}% funded</span>
+        </div>
+        <div class="dr-f-pbar"><div class="dr-f-pfill" style="width:${pct}%"></div></div>
+      </div>
+      <div class="inv-lbl">Your Commitment (EGP)</div>
+      <input type="number" class="inv-input" id="inv-amt" placeholder="Min EGP ${d.min.toLocaleString()}" min="${d.min}" step="500" style="margin-bottom:10px">
+      <div class="inv-hint">Minimum EGP ${d.min.toLocaleString()} · Funds held in escrow · No money moves until you confirm wire instructions</div>
+      <button class="inv-cta" onclick="submitInv(${d.id})">Queue Commitment — Review &amp; Confirm</button>
+    </div>`;
+
+  document.getElementById('modal').classList.add('on');
 }
 
 function submitInv(id){
@@ -900,8 +1148,8 @@ function submitInv(id){
   document.getElementById('modal-body').innerHTML=`
     <div class="success-sheet">
       <div class="suc-ic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <div class="suc-title">Investment Queued</div>
-      <p class="suc-sub"><strong>EGP ${amt.toLocaleString()}</strong> in <strong>${d.name}</strong> is queued for review.<br><br>Our compliance team will verify your accreditation and send wire instructions within 24 hours. No money moves until you confirm.</p>
+      <div class="suc-title">Commitment Queued</div>
+      <p class="suc-sub"><strong>EGP ${amt.toLocaleString()}</strong> in <strong>${d.name}</strong> is in the queue.<br><br>Our compliance team will verify your accreditation status and send wire instructions to your registered email within 24 hours. No money moves until you confirm.</p>
       <button class="done-btn" onclick="closeModal()">Done</button>
     </div>`;
 }
@@ -935,8 +1183,6 @@ function showFounderForm(){
 
 /* ── INIT ── */
 renderDeals();
-renderHoldings();
-renderInvList('active');
 setTimeout(drawFeatChart,250);
 </script>
 </body>
