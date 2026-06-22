@@ -446,9 +446,221 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
 .dr-fund-top span:last-child{font-weight:800;color:var(--t1)}
 .dr-f-pbar{height:5px;background:var(--border);border-radius:3px;overflow:hidden}
 .dr-f-pfill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--black),#404040)}
+
+/* ── ONBOARDING GATE ── */
+.ob-gate{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;flex-direction:column;max-width:430px;margin:0 auto;box-shadow:0 0 0 1px rgba(0,0,0,.08),0 32px 80px rgba(0,0,0,.2)}
+.ob-gate.hidden{display:none}
+.ob-step{display:none;flex-direction:column;height:100%;overflow-y:auto}
+.ob-step.on{display:flex}
+.ob-step::-webkit-scrollbar{display:none}
+.ob-hero{background:var(--black);padding:52px 28px 36px;position:relative;overflow:hidden;flex-shrink:0}
+.ob-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 90% 10%,rgba(37,99,235,.3) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 10% 90%,rgba(124,58,237,.2) 0%,transparent 60%);pointer-events:none}
+.ob-hero-inner{position:relative;z-index:1}
+.ob-logo{font-size:20px;font-weight:900;letter-spacing:-.7px;color:#fff;margin-bottom:32px}
+.ob-step-tag{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.28);margin-bottom:10px;font-weight:700}
+.ob-h{font-size:28px;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1.1;margin-bottom:8px}
+.ob-sub{font-size:12px;color:rgba(255,255,255,.4);line-height:1.7}
+.ob-progress{display:flex;gap:5px;margin-top:24px}
+.ob-pip{height:3px;border-radius:2px;flex:1;background:rgba(255,255,255,.15);transition:.3s}
+.ob-pip.done{background:#fff}
+.ob-body{flex:1;padding:24px 22px 20px;display:flex;flex-direction:column}
+.ob-body-title{font-size:14px;font-weight:700;letter-spacing:-.2px;margin-bottom:10px}
+.ob-body-text{font-size:12px;color:var(--t2);line-height:1.8;margin-bottom:16px}
+.ob-scroll-box{flex:1;background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:16px;overflow-y:auto;font-size:11px;color:var(--t2);line-height:1.85;box-shadow:var(--sh);max-height:260px;min-height:180px}
+.ob-scroll-box::-webkit-scrollbar{display:none}
+.ob-scroll-box h4{font-size:11px;font-weight:700;color:var(--t1);margin:12px 0 4px}
+.ob-scroll-box h4:first-child{margin-top:0}
+.ob-scroll-fade{font-size:10px;color:var(--t3);text-align:center;margin-top:8px;font-weight:500}
+.ob-footer{padding:0 22px 36px;flex-shrink:0}
+.ob-btn{width:100%;padding:14px;background:var(--black);color:#fff;border:none;border-radius:10px;font-size:13.5px;font-weight:800;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:-.2px;box-shadow:var(--sh-lg);transition:.15s}
+.ob-btn:disabled{background:var(--border);color:var(--t3);box-shadow:none;cursor:not-allowed}
+.ob-btn-ghost{background:transparent;color:var(--t2);border:1px solid var(--border);box-shadow:none;margin-top:10px}
+.ob-q-list{display:flex;flex-direction:column;gap:8px;flex:1}
+.ob-q-block{margin-bottom:18px}
+.ob-q-text{font-size:13px;font-weight:700;letter-spacing:-.2px;color:var(--t1);margin-bottom:10px;line-height:1.5}
+.ob-q-options{display:flex;flex-direction:column;gap:7px}
+.ob-opt{display:flex;align-items:center;gap:12px;padding:11px 14px;background:var(--white);border:1.5px solid var(--border);border-radius:9px;cursor:pointer;transition:.15s;font-size:12.5px;color:var(--t2);font-weight:500;font-family:'Inter',sans-serif;text-align:left}
+.ob-opt.selected{border-color:var(--black);background:var(--black);color:#fff;font-weight:600}
+.ob-opt.wrong{border-color:var(--red);background:var(--red-bg);color:var(--red)}
+.ob-opt.correct{border-color:var(--grn);background:var(--grn-bg);color:var(--grn)}
+.ob-opt-mark{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--border-s);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800}
+.ob-opt.selected .ob-opt-mark{border-color:rgba(255,255,255,.4);color:#fff}
+.ob-cert-checks{display:flex;flex-direction:column;gap:10px;flex:1}
+.ob-check-row{display:flex;align-items:flex-start;gap:13px;padding:13px 14px;background:var(--white);border:1.5px solid var(--border);border-radius:9px;cursor:pointer;transition:.15s}
+.ob-check-row.checked{border-color:var(--black)}
+.ob-checkbox{width:20px;height:20px;border-radius:5px;border:1.5px solid var(--border-s);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;transition:.15s}
+.ob-check-row.checked .ob-checkbox{background:var(--black);border-color:var(--black)}
+.ob-check-row.checked .ob-checkbox::after{content:'✓';font-size:11px;color:#fff;font-weight:800}
+.ob-check-text{font-size:11.5px;color:var(--t2);line-height:1.6}
+.ob-check-row.checked .ob-check-text{color:var(--t1)}
+.ob-success{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 28px}
+.ob-suc-icon{width:72px;height:72px;border-radius:18px;background:var(--black);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.ob-suc-icon svg{width:32px;height:32px;stroke:#fff;fill:none;stroke-width:2.5}
+.ob-suc-h{font-size:24px;font-weight:900;letter-spacing:-.8px;margin-bottom:8px}
+.ob-suc-sub{font-size:12.5px;color:var(--t2);line-height:1.8}
 </style>
 </head>
 <body>
+
+<!-- ══════════════════════════════════════
+     ONBOARDING GATE
+══════════════════════════════════════ -->
+<div class="ob-gate" id="ob-gate">
+
+  <!-- Step 1: Welcome -->
+  <div class="ob-step on" id="ob-s1">
+    <div class="ob-hero">
+      <div class="ob-hero-inner">
+        <div class="ob-logo">ASRAA</div>
+        <div class="ob-step-tag">Step 1 of 4</div>
+        <div class="ob-h">Private fund access,<br>built for Egypt.</div>
+        <div class="ob-sub">ASRAA is a regulated distribution platform for professionally managed VC and PE funds. Before you proceed, we need to confirm a few things.</div>
+        <div class="ob-progress">
+          <div class="ob-pip done" id="pip1"></div>
+          <div class="ob-pip" id="pip2"></div>
+          <div class="ob-pip" id="pip3"></div>
+          <div class="ob-pip" id="pip4"></div>
+        </div>
+      </div>
+    </div>
+    <div class="ob-body">
+      <div class="ob-body-title">What is ASRAA?</div>
+      <div class="ob-body-text">ASRAA gives qualified Egyptian investors access to VC and PE funds that are normally only available to large institutions. Each fund on the platform has been through ASRAA's GP due diligence process.<br><br>This is not a stock trading app. Investments made through ASRAA are <strong>illiquid</strong>, typically held for 7–10 years, and carry significant risk of partial or total loss of capital.<br><br>ASRAA operates under Egyptian Capital Market Law No. 95/1992 and FRA Decree No. 177/2024.</div>
+    </div>
+    <div class="ob-footer">
+      <button class="ob-btn" onclick="obNext(2)">I Understand — Continue →</button>
+    </div>
+  </div>
+
+  <!-- Step 2: Regulatory Disclosure -->
+  <div class="ob-step" id="ob-s2">
+    <div class="ob-hero">
+      <div class="ob-hero-inner">
+        <div class="ob-logo">ASRAA</div>
+        <div class="ob-step-tag">Step 2 of 4</div>
+        <div class="ob-h">Regulatory<br>disclosure.</div>
+        <div class="ob-sub">Please read the following carefully. You must scroll to the bottom before continuing.</div>
+        <div class="ob-progress">
+          <div class="ob-pip done"></div>
+          <div class="ob-pip done"></div>
+          <div class="ob-pip"></div>
+          <div class="ob-pip"></div>
+        </div>
+      </div>
+    </div>
+    <div class="ob-body">
+      <div class="ob-scroll-box" id="ob-scroll" onscroll="obCheckScroll()">
+        <h4>1. Platform Nature</h4>
+        ASRAA is a fund distribution marketplace. It is not a fund manager, investment advisor, or broker-dealer. ASRAA does not manage investor capital or make investment decisions on behalf of investors.
+        <h4>2. Qualified Investors Only</h4>
+        Access to funds on ASRAA is restricted to qualified investors as defined under Egyptian Capital Market Law No. 95/1992 — individuals with a net worth of at least EGP 5,000,000 or an annual income of at least EGP 1,000,000.
+        <h4>3. AML / KYC</h4>
+        All investors are subject to identity verification and anti-money laundering checks under FRA Decree No. 161/2024 and Law No. 80/2002 before being permitted to commit to any fund.
+        <h4>4. Illiquidity Risk</h4>
+        Investments made through ASRAA are illiquid. You will not be able to redeem or sell your position during the fund's life, which is typically 7–10 years. There is no secondary market for these positions.
+        <h4>5. Capital at Risk</h4>
+        Past performance of a fund manager does not guarantee future results. You may lose part or all of your committed capital. Do not commit funds you cannot afford to lose.
+        <h4>6. No FRA Approval of Individual Funds</h4>
+        Funds listed on ASRAA are private placements and have not been individually approved or recommended by the Financial Regulatory Authority (FRA). ASRAA conducts its own due diligence but this does not constitute regulatory endorsement.
+        <h4>7. Conflicts of Interest</h4>
+        ASRAA earns a placement fee from fund managers for distribution services. This fee is disclosed in each fund's term sheet. ASRAA's economic interest may differ from yours as an investor.
+        <h4>8. Governing Law</h4>
+        All transactions on ASRAA are governed by Egyptian law. Disputes are subject to the exclusive jurisdiction of Cairo courts.
+      </div>
+      <div class="ob-scroll-fade" id="ob-scroll-hint">↓ Scroll to read all disclosures</div>
+    </div>
+    <div class="ob-footer">
+      <button class="ob-btn" id="ob-reg-btn" disabled onclick="obNext(3)">I Have Read & Understood →</button>
+    </div>
+  </div>
+
+  <!-- Step 3: Knowledge Test -->
+  <div class="ob-step" id="ob-s3">
+    <div class="ob-hero">
+      <div class="ob-hero-inner">
+        <div class="ob-logo">ASRAA</div>
+        <div class="ob-step-tag">Step 3 of 4</div>
+        <div class="ob-h">Quick knowledge<br>check.</div>
+        <div class="ob-sub">Three questions to confirm you understand the nature of fund investments. You must answer all correctly.</div>
+        <div class="ob-progress">
+          <div class="ob-pip done"></div>
+          <div class="ob-pip done"></div>
+          <div class="ob-pip done"></div>
+          <div class="ob-pip"></div>
+        </div>
+      </div>
+    </div>
+    <div class="ob-body">
+      <div class="ob-q-block">
+        <div class="ob-q-text">1. What does it mean for an investment to be "illiquid"?</div>
+        <div class="ob-q-options" id="q1">
+          <button class="ob-opt" onclick="obAnswer(this,'q1',false)"><span class="ob-opt-mark">A</span>It can be sold on a stock exchange at any time</button>
+          <button class="ob-opt" onclick="obAnswer(this,'q1',true)"><span class="ob-opt-mark">B</span>You cannot easily sell or exit the position before the fund ends</button>
+          <button class="ob-opt" onclick="obAnswer(this,'q1',false)"><span class="ob-opt-mark">C</span>The investment is held in cash</button>
+        </div>
+      </div>
+      <div class="ob-q-block">
+        <div class="ob-q-text">2. What is "carried interest" in a VC fund?</div>
+        <div class="ob-q-options" id="q2">
+          <button class="ob-opt" onclick="obAnswer(this,'q2',false)"><span class="ob-opt-mark">A</span>The annual management fee charged by the fund manager</button>
+          <button class="ob-opt" onclick="obAnswer(this,'q2',false)"><span class="ob-opt-mark">B</span>The interest earned on cash held in escrow</button>
+          <button class="ob-opt" onclick="obAnswer(this,'q2',true)"><span class="ob-opt-mark">C</span>The fund manager's share of profits above a set return hurdle</button>
+        </div>
+      </div>
+      <div class="ob-q-block">
+        <div class="ob-q-text">3. Which of the following best describes the risk of investing in a VC fund?</div>
+        <div class="ob-q-options" id="q3">
+          <button class="ob-opt" onclick="obAnswer(this,'q3',false)"><span class="ob-opt-mark">A</span>Returns are guaranteed by the fund manager's track record</button>
+          <button class="ob-opt" onclick="obAnswer(this,'q3',true)"><span class="ob-opt-mark">B</span>You may lose some or all of your committed capital</button>
+          <button class="ob-opt" onclick="obAnswer(this,'q3',false)"><span class="ob-opt-mark">C</span>The FRA guarantees a minimum return on private fund investments</button>
+        </div>
+      </div>
+    </div>
+    <div class="ob-footer">
+      <button class="ob-btn" id="ob-quiz-btn" disabled onclick="obNext(4)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- Step 4: Investor Certification -->
+  <div class="ob-step" id="ob-s4">
+    <div class="ob-hero">
+      <div class="ob-hero-inner">
+        <div class="ob-logo">ASRAA</div>
+        <div class="ob-step-tag">Step 4 of 4</div>
+        <div class="ob-h">Investor<br>certification.</div>
+        <div class="ob-sub">Self-certify your qualified investor status under Egyptian Capital Market Law.</div>
+        <div class="ob-progress">
+          <div class="ob-pip done"></div>
+          <div class="ob-pip done"></div>
+          <div class="ob-pip done"></div>
+          <div class="ob-pip done"></div>
+        </div>
+      </div>
+    </div>
+    <div class="ob-body">
+      <div class="ob-body-text">Please confirm which of the following applies to you. Both conditions qualify you as a qualified investor under FRA regulations.</div>
+      <div class="ob-cert-checks" id="ob-cert">
+        <div class="ob-check-row" onclick="obToggleCert(this,0)">
+          <div class="ob-checkbox"></div>
+          <div class="ob-check-text">My net worth (excluding primary residence) is at least <strong>EGP 5,000,000</strong></div>
+        </div>
+        <div class="ob-check-row" onclick="obToggleCert(this,1)">
+          <div class="ob-checkbox"></div>
+          <div class="ob-check-text">My annual income from all sources exceeds <strong>EGP 1,000,000</strong></div>
+        </div>
+        <div class="ob-check-row" onclick="obToggleCert(this,2)" style="margin-top:4px;border-color:var(--border)">
+          <div class="ob-checkbox"></div>
+          <div class="ob-check-text">I confirm that the information I have provided is accurate. I understand this is a self-certification and that ASRAA will conduct identity verification separately.</div>
+        </div>
+      </div>
+    </div>
+    <div class="ob-footer">
+      <button class="ob-btn" id="ob-cert-btn" disabled onclick="obFinish()">Confirm &amp; Enter ASRAA →</button>
+    </div>
+  </div>
+
+</div><!-- /ob-gate -->
+
 <div class="app">
 <div class="content">
 
@@ -467,16 +679,16 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
   <!-- Hero -->
   <div class="hero">
     <div class="hero-inner">
-      <div class="hero-tag">🇪🇬 Egypt's Private Deal Room</div>
+      <div class="hero-tag">🇪🇬 Egypt's Fund Distribution Platform</div>
       <div class="hero-h">
-        Back Egypt's next<br>unicorns.
-        <em>Before they're<br>obvious.</em>
+        Access Egypt's top<br>VC funds.
+        <em>Before they<br>close.</em>
       </div>
       <div class="hero-rule"></div>
       <div class="hero-stats">
-        <div class="hs"><div class="n">47</div><div class="l">Active Deals</div></div>
-        <div class="hs"><div class="n">EGP 82M</div><div class="l">Deployed</div></div>
-        <div class="hs"><div class="n">3,200+</div><div class="l">Investors</div></div>
+        <div class="hs"><div class="n">12</div><div class="l">Active Funds</div></div>
+        <div class="hs"><div class="n">EGP 340M</div><div class="l">Under Distribution</div></div>
+        <div class="hs"><div class="n">3,200+</div><div class="l">Qualified Investors</div></div>
       </div>
     </div>
   </div>
@@ -485,60 +697,60 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
   <div style="margin-bottom:4px">
     <div class="hiw-chips">
       <div class="hiw-chip on" onclick="setHiw(0,this)">
-        <span class="hiw-chip-n">1.</span> Browse Deals
+        <span class="hiw-chip-n">1.</span> Browse Funds
       </div>
       <div class="hiw-chip" onclick="setHiw(1,this)">
-        <span class="hiw-chip-n">2.</span> Commit via Escrow
+        <span class="hiw-chip-n">2.</span> Commit
       </div>
       <div class="hiw-chip" onclick="setHiw(2,this)">
-        <span class="hiw-chip-n">3.</span> Own via SPV
+        <span class="hiw-chip-n">3.</span> Track
       </div>
     </div>
     <div class="hiw-desc-box">
-      <div class="hiw-desc on" id="hiw-0">Explore vetted Egyptian startups raising capital. Every deal is reviewed by our investment committee before going live.</div>
-      <div class="hiw-desc" id="hiw-1">Your funds are held by a regulated third-party escrow agent — never by ASRAA. Capital releases only when the round hits its target.</div>
-      <div class="hiw-desc" id="hiw-2">You hold equity through a dedicated SPV — one clean entry on the startup's cap table, protected by Egyptian contract law.</div>
+      <div class="hiw-desc on" id="hiw-0">Browse VC and PE funds curated by ASRAA's investment committee. Each fund has passed our GP due diligence process.</div>
+      <div class="hiw-desc" id="hiw-1">Select a fund and commit through ASRAA. We handle the process and paperwork on your behalf.</div>
+      <div class="hiw-desc" id="hiw-2">Your positions live in your ASRAA account. Receive updates directly from fund managers and stay close to your investments.</div>
     </div>
   </div>
 
-  <!-- Featured Deal -->
+  <!-- Featured Fund -->
   <div style="padding:0 16px;margin-bottom:6px">
     <div class="sec-row" style="margin-bottom:0;padding:10px 0 8px">
-      <span class="sec-title">Featured Deal</span>
-      <div class="feat-live"><div class="live-dot"></div>Live</div>
+      <span class="sec-title">Featured Fund</span>
+      <div class="feat-live"><div class="live-dot"></div>Open</div>
     </div>
   </div>
-  <div class="feat" onclick="openDeal(0)">
+  <div class="feat" onclick="openFund(0)">
     <div class="feat-inner">
       <div class="feat-hdr">
-        <div class="feat-logo">QI</div>
+        <div class="feat-logo">AV</div>
         <div>
-          <div class="feat-name">Qist</div>
-          <div class="feat-sub">FinTech · Seed · EGP 8M target</div>
+          <div class="feat-name">Algebra Ventures Fund III</div>
+          <div class="feat-sub">Early Stage · 2024 Vintage · EGP 180M fund</div>
         </div>
       </div>
       <div class="feat-chart"><canvas id="featChart"></canvas></div>
       <div class="feat-divider"></div>
       <div class="feat-meta">
-        <div class="fm"><div class="v">EGP 210K</div><div class="l">Monthly Rev</div></div>
-        <div class="fm"><div class="v">19%</div><div class="l">Funded</div></div>
-        <div class="fm"><div class="v">142</div><div class="l">Investors</div></div>
+        <div class="fm"><div class="v">EGP 180M</div><div class="l">Fund Size</div></div>
+        <div class="fm"><div class="v">70%</div><div class="l">Feeder Filled</div></div>
+        <div class="fm"><div class="v">87</div><div class="l">LPs</div></div>
       </div>
-      <button class="feat-btn" onclick="event.stopPropagation();openDeal(0)">View Deal →</button>
+      <button class="feat-btn" onclick="event.stopPropagation();openFund(0)">View Fund →</button>
     </div>
   </div>
 
-  <!-- Active Deals -->
-  <span class="eyebrow">Active Deals</span>
+  <!-- Active Funds -->
+  <span class="eyebrow">Active Funds</span>
   <div class="dscroll" id="deal-scroll" style="margin-bottom:16px"></div>
 
-  <!-- Founder CTA -->
+  <!-- GP CTA -->
   <div class="founder-path">
     <div class="fp-inner">
-      <div class="fp-eyebrow">For Founders</div>
-      <div class="fp-title">Raise on ASRAA.</div>
-      <div class="fp-sub">Access 3,200+ Egyptian angels, family offices, and institutional investors — one clean SPV entry on your cap table.</div>
-      <button class="fp-cta" onclick="goRaise()">Raise Capital on ASRAA →</button>
+      <div class="fp-eyebrow">For Fund Managers</div>
+      <div class="fp-title">Distribute on ASRAA.</div>
+      <div class="fp-sub">Reach 3,200+ qualified Egyptian investors through a single feeder vehicle — one LP on your fund's books.</div>
+      <button class="fp-cta" onclick="goRaise()">Apply to Distribute →</button>
     </div>
   </div>
 
@@ -558,8 +770,8 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
   <div class="updates-hero">
     <div class="uh-inner">
       <div class="uh-tag">Your Private Channel</div>
-      <div class="uh-title">What's happening<br>with your deals.</div>
-      <div class="uh-sub">Founder messages, milestones, and platform news — only from companies you've backed.</div>
+      <div class="uh-title">What's happening<br>with your funds.</div>
+      <div class="uh-sub">GP updates, milestones, and platform news — from fund managers you've invested with.</div>
     </div>
   </div>
 
@@ -579,8 +791,8 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
 
   <div class="pos-summary">
     <div class="ps-lbl">Total Capital Committed</div>
-    <div class="ps-val">EGP 115,600</div>
-    <div class="ps-note">Across 5 active SPVs · last updated May 2025</div>
+    <div class="ps-val">EGP 250,000</div>
+    <div class="ps-note">Across 3 active feeder vehicles · last updated Jun 2025</div>
     <div class="ps-grid">
       <div class="psg"><div class="v">5</div><div class="l">Positions</div></div>
       <div class="psg"><div class="v">1</div><div class="l">Exit</div></div>
@@ -624,18 +836,18 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
     <div class="sg-lbl">Preferences</div>
     <div class="sg-wrap">
       <div class="si"><div class="si-ic"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="si-text"><div class="si-title">Risk Profile</div><div class="si-sub">Growth / Moderate</div></div><div class="si-r"><div class="chev"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div></div>
-      <div class="si"><div class="si-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="si-text"><div class="si-title">Deal Alerts</div><div class="si-sub">New matching opportunities</div></div><div class="si-r"><div class="tog on" onclick="this.classList.toggle('on')"><div class="tog-k"></div></div></div></div>
-      <div class="si"><div class="si-ic"><svg viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="12" y1="18" x2="20" y2="18"/></svg></div><div class="si-text"><div class="si-title">Sector Preferences</div><div class="si-sub">FinTech, HealthTech, EdTech</div></div><div class="si-r"><div class="chev"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div></div>
+      <div class="si"><div class="si-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="si-text"><div class="si-title">Fund Launch Alerts</div><div class="si-sub">Notify me of new fund launches</div></div><div class="si-r"><div class="tog on" onclick="this.classList.toggle('on')"><div class="tog-k"></div></div></div></div>
+      <div class="si"><div class="si-ic"><svg viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="12" y1="18" x2="20" y2="18"/></svg></div><div class="si-text"><div class="si-title">Fund Focus Preferences</div><div class="si-sub">Early-Stage Tech, FinTech, Growth</div></div><div class="si-r"><div class="chev"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div></div></div>
     </div>
   </div>
 
   <div class="compliance-box">
     <div class="cb-h">⚖️ Regulatory Compliance</div>
-    <div class="cb-item"><div class="cb-bullet">1</div>ASRAA is designed to operate under Egypt's equity crowdfunding framework (Capital Market Law No. 95/1992 &amp; FRA Decree No. 177/2024).</div>
-    <div class="cb-item"><div class="cb-bullet">2</div>All deals are private placements restricted to accredited investors (net worth ≥ EGP 5M or annual income ≥ EGP 1M).</div>
+    <div class="cb-item"><div class="cb-bullet">1</div>ASRAA operates under Egypt's regulatory framework (Capital Market Law No. 95/1992 &amp; FRA Decree No. 177/2024) as a platform for fund unit distribution to qualified investors.</div>
+    <div class="cb-item"><div class="cb-bullet">2</div>All fund offerings are restricted to accredited investors (net worth ≥ EGP 5M or annual income ≥ EGP 1M).</div>
     <div class="cb-item"><div class="cb-bullet">3</div>AML/KYC fulfilled under FRA Decree No. 161/2024 and Law No. 80/2002. All investors verified before access.</div>
-    <div class="cb-item"><div class="cb-bullet">4</div>Acquiring ≥10% of a company's capital requires prior FRA approval. ASRAA flags this threshold automatically.</div>
-    <div class="cb-item"><div class="cb-bullet">5</div>Startup investments are illiquid and high-risk. You may lose your entire investment.</div>
+    <div class="cb-item"><div class="cb-bullet">4</div>Each feeder vehicle is structured as a single LP in the underlying fund. ASRAA monitors aggregate feeder ownership relative to fund thresholds.</div>
+    <div class="cb-item"><div class="cb-bullet">5</div>Fund unit investments are illiquid for the duration of the fund's life (typically 7–10 years). You may lose the entire amount committed.</div>
   </div>
 
   <div class="sg">
@@ -661,52 +873,52 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
 <div id="sc-raise" class="sc">
   <div class="topbar">
     <div class="logo">ASRAA</div>
-    <div class="screen-label">Raise Capital</div>
+    <div class="screen-label">Distribute</div>
   </div>
 
   <div class="raise-hero">
     <div class="rh-inner">
-      <div class="rh-tag">For Founders</div>
-      <div class="rh-h">Raise your round.<br>The right way.</div>
-      <div class="rh-sub">Access 3,200+ Egyptian angels, family offices, and institutional investors — all through one clean SPV entry on your cap table.</div>
+      <div class="rh-tag">For Fund Managers</div>
+      <div class="rh-h">Reach Egypt's qualified<br>investors. Through one feeder.</div>
+      <div class="rh-sub">Distribute to 3,200+ qualified Egyptian investors — pooled into a single LP entry in your fund.</div>
     </div>
   </div>
 
   <div class="raise-section">
     <div class="rs-label">The Process</div>
     <div class="rt-list">
-      <div class="rt-step"><div class="rt-num">01</div><div><div class="rt-title">Apply &amp; Get Vetted</div><div class="rt-desc">Submit your application. Our investment committee conducts due diligence and agrees a term sheet within 5 business days.</div></div></div>
-      <div class="rt-step"><div class="rt-num">02</div><div><div class="rt-title">Deal Goes Live</div><div class="rt-desc">Your round is listed and visible to 3,200+ accredited investors matched to your sector and stage.</div></div></div>
-      <div class="rt-step"><div class="rt-num">03</div><div><div class="rt-title">Capital Raised into Escrow</div><div class="rt-desc">Investors commit capital. All funds held by a third-party escrow agent — never by ASRAA — until the round closes.</div></div></div>
-      <div class="rt-step"><div class="rt-num">04</div><div><div class="rt-title">Round Closes</div><div class="rt-desc">Escrow releases funds to you. One SPV shareholder on your cap table — not hundreds of individuals.</div></div></div>
-      <div class="rt-step"><div class="rt-num">05</div><div><div class="rt-title">Ongoing</div><div class="rt-desc">Quarterly reporting applies. ASRAA manages investor relations and enforces SPV contractual rights on your behalf.</div></div></div>
+      <div class="rt-step"><div class="rt-num">01</div><div><div class="rt-title">Apply &amp; GP Due Diligence</div><div class="rt-desc">Submit your fund materials. ASRAA reviews GP track record, fund documents, and audited financials before approving distribution.</div></div></div>
+      <div class="rt-step"><div class="rt-num">02</div><div><div class="rt-title">Fund Listed on Platform</div><div class="rt-desc">Your fund is presented to 3,200+ qualified investors with a full data room: thesis, track record, team, and terms.</div></div></div>
+      <div class="rt-step"><div class="rt-num">03</div><div><div class="rt-title">Subscriptions Open</div><div class="rt-desc">Investors commit through ASRAA. Subscription agreements and KYC are handled entirely by the platform.</div></div></div>
+      <div class="rt-step"><div class="rt-num">04</div><div><div class="rt-title">Feeder Closes, Capital Transferred</div><div class="rt-desc">Once the feeder reaches its minimum close, capital is transferred to your main fund — one LP, one wire.</div></div></div>
+      <div class="rt-step"><div class="rt-num">05</div><div><div class="rt-title">Ongoing Reporting</div><div class="rt-desc">Send quarterly updates via the ASRAA platform. We handle all feeder LP communications and document distribution on your behalf.</div></div></div>
     </div>
   </div>
 
   <div class="raise-section">
     <div class="rs-label">What You Get</div>
     <div class="rw-grid">
-      <div class="rwg"><div class="rwg-icon">📄</div><div class="rwg-title">Standardised Docs</div><div class="rwg-body">FRA-compliant legal documents. No listing fee at this stage.</div></div>
-      <div class="rwg"><div class="rwg-icon">🏛️</div><div class="rwg-title">One Cap Table Entry</div><div class="rwg-body">All investors pooled into one SPV. Your cap table stays clean.</div></div>
-      <div class="rwg"><div class="rwg-icon">⚡</div><div class="rwg-title">Fast Close</div><div class="rwg-body">Targets close within 60 days of going live.</div></div>
-      <div class="rwg"><div class="rwg-icon">🎯</div><div class="rwg-title">Sector Matching</div><div class="rwg-body">Shown to investors who specialise in your vertical.</div></div>
+      <div class="rwg"><div class="rwg-icon">📄</div><div class="rwg-title">Standardised Docs</div><div class="rwg-body">FRA-compliant feeder vehicle documentation. No upfront listing fee.</div></div>
+      <div class="rwg"><div class="rwg-icon">🏛️</div><div class="rwg-title">One LP Entry</div><div class="rwg-body">All ASRAA investors pooled into one feeder — a single LP line on your fund register.</div></div>
+      <div class="rwg"><div class="rwg-icon">⚡</div><div class="rwg-title">Fast Subscription</div><div class="rwg-body">Feeder subscriptions target close within 90 days of listing.</div></div>
+      <div class="rwg"><div class="rwg-icon">🎯</div><div class="rwg-title">Investor Matching</div><div class="rwg-body">Shown to investors aligned with your fund strategy and vintage.</div></div>
     </div>
   </div>
 
   <div class="raise-section">
-    <div class="rs-label">Minimum Requirements</div>
+    <div class="rs-label">GP Requirements</div>
     <div class="req-list">
-      <div class="req-item"><span>—</span>Registered Egyptian company (S.A.E. or LLC preferred)</div>
-      <div class="req-item"><span>—</span>At least 6 months of operating history &amp; revenue traction</div>
-      <div class="req-item"><span>—</span>Audited financials or certified management accounts</div>
-      <div class="req-item"><span>—</span>Valuation supported by term sheet or independent report</div>
-      <div class="req-item"><span>—</span>Round size: EGP 1M – EGP 50M</div>
-      <div class="req-item"><span>—</span>No active legal disputes or FRA sanctions</div>
+      <div class="req-item"><span>—</span>Registered fund management entity (Egypt or DIFC/ADGM accepted)</div>
+      <div class="req-item"><span>—</span>At least one prior fund with audited financials or track record documentation</div>
+      <div class="req-item"><span>—</span>Fund size minimum USD 30M (EGP equivalent)</div>
+      <div class="req-item"><span>—</span>Draft or final LP Agreement and Fund Prospectus available</div>
+      <div class="req-item"><span>—</span>No active regulatory sanctions or litigation</div>
+      <div class="req-item"><span>—</span>Designated GP contact for ASRAA investor communications</div>
     </div>
   </div>
 
   <div class="raise-cta-wrap">
-    <button class="raise-cta" onclick="showFounderForm()">Start Your Application →</button>
+    <button class="raise-cta" onclick="showGPForm()">Apply to Distribute →</button>
   </div>
   <div style="height:6px"></div>
 </div>
@@ -734,7 +946,7 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
   </button>
   <button class="ni" id="nav-raise" onclick="go('raise',this)">
     <svg viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
-    <span>Raise</span>
+    <span>Distribute</span>
   </button>
 </nav>
 
@@ -750,162 +962,154 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
 
 <script>
 /* ── CONSTANTS ── */
-const STAGE_CLASS={seed:'badge-seed','pre-a':'badge-pre-a','series-a':'badge-series-a','series-b':'badge-series-b'};
-const STAGE_LABEL={seed:'Seed','pre-a':'Pre-Series A','series-a':'Series A','series-b':'Series B'};
+const STRATEGY_CLASS={'early-stage':'badge-seed',growth:'badge-series-a','sector-focus':'badge-pre-a','multi-stage':'badge-series-b'};
+const STRATEGY_LABEL={'early-stage':'Early Stage',growth:'Growth','sector-focus':'Sector Focus','multi-stage':'Multi-Stage'};
 
-/* ── DEALS DATA (enriched for pitch room) ── */
-const DEALS=[
-  {id:0,name:'Qist',abbr:'QI',sector:'FinTech',stageKey:'seed',daysLeft:47,
-   desc:"BNPL and micro-lending for Egypt's 35M unbanked adults via mobile wallet. No credit bureau required.",
-   target:8000000,raised:1500000,min:10000,investors:142,
-   ytd:[100,105,112,108,120,132,128,140,155,162,170,182],mrr:'EGP 210K',
-   thesis:"Egypt has 35 million adults with no access to formal credit. Qist bypasses the credit bureau entirely — using mobile wallet history and behavioural data to underwrite micro-loans and BNPL for daily purchases. Fully digital, no branch required. The underbanked isn't a charity case; it's the largest untapped credit market in Africa.",
-   model:"Qist charges a 3–6% origination fee on each loan and earns a merchant discount rate of 1.8% on BNPL transactions. Average ticket size is EGP 1,200 with a 28-day term. Default rate sits at 2.1% — below the industry average of 4.8%.",
-   traction:[
-     {v:'EGP 210K',l:'Monthly Revenue',note:'as of Apr 2025'},
-     {v:'48,000',l:'Active Borrowers',note:'as of Apr 2025'},
-     {v:'2.1%',l:'Default Rate',note:'industry avg 4.8%'},
-     {v:'EGP 1,200',l:'Avg Ticket Size',note:'28-day terms'},
+/* ── FUNDS DATA ── */
+const FUNDS=[
+  {id:0,name:'Algebra Ventures Fund III',manager:'Algebra Ventures',abbr:'AV',strategyKey:'early-stage',daysLeft:38,
+   desc:"Egypt's most active early-stage fund. 40+ portfolio companies, 3 exits. Now open to qualified ASRAA investors.",
+   target:12000000,raised:8400000,min:50000,investors:87,fundSize:180000000,vintage:'2024',
+   ytd:[100,102,106,104,110,116,112,118,124,130,128,135],
+   thesis:"Egypt's startup ecosystem has matured significantly over the past decade, yet access to institutional-grade early-stage capital remains concentrated. Algebra Ventures III targets pre-seed to Series A companies across FinTech, HealthTech, and B2B software — sectors where Egyptian founders have demonstrated consistent product-market fit and export potential. The fund brings not just capital but a network of 200+ corporate partners across the MENA region.",
+   strategy:"Algebra III deploys into 25–30 companies over a 3-year investment period. Typical initial ticket: USD 500K–2M. The fund reserves 40% of capital for follow-on investments into breakout performers. Geographic focus is Egypt-first with the expectation that top companies will expand regionally.",
+   trackRecord:[
+     {v:'Fund I IRR','l':'31.4%',note:'2016 vintage, fully realised'},
+     {v:'Fund II TVPI','l':'2.1×',note:'2020 vintage, partially unrealised'},
+     {v:'Notable Exits','l':'Paymob, Trella',note:'both achieved $100M+ valuations'},
+     {v:'Active Portfolio','l':'42 companies',note:'Fund I + Fund II combined'},
    ],
    team:[
-     {abbr:'KA',name:'Karim Amer',role:'CEO & Co-Founder',bg:'Ex-CIB Head of Digital Lending. 11 years in Egyptian retail banking.'},
-     {abbr:'NS',name:'Nada Saleh',role:'CTO & Co-Founder',bg:'Previously led engineering at Fawry. MSc Computer Science, AUC.'},
-     {abbr:'MR',name:'Mohamed Ragab',role:'CFO',bg:'Former VP Finance at Banque Misr. Chartered accountant with 9 years in credit risk.'},
+     {abbr:'KA',name:'Karim Amer',role:'Managing Partner',bg:'20 years in Egyptian venture and private equity. Previously MD at EFG Hermes Private Equity.'},
+     {abbr:'NS',name:'Nada Selim',role:'General Partner',bg:'Led Algebra\'s FinTech portfolio. Former Head of Innovation at CIB Egypt. Board member at Paymob.'},
+     {abbr:'MR',name:'Mohamed Riad',role:'Partner',bg:'Coverage lead for HealthTech and B2B SaaS. Previously venture partner at Sawari Ventures.'},
    ],
-   proceeds:[
-     {l:'Loan Book Growth',pct:55},
-     {l:'Technology & Product',pct:20},
-     {l:'Regulatory & Compliance',pct:15},
-     {l:'Operations & Hiring',pct:10},
+   allocation:[
+     {l:'FinTech & Payments',pct:35},
+     {l:'B2B SaaS & Enterprise',pct:28},
+     {l:'HealthTech',pct:22},
+     {l:'Other Tech Verticals',pct:15},
    ],
-   terms:{min:'EGP 10,000',carry:'20%',proRata:'Yes — investors over EGP 50K',close:'30 Jun 2025'},
+   terms:{min:'EGP 50,000',mgmtFee:'2% per annum',carry:'20% above 8% hurdle',lockup:'8 years',close:'31 Jul 2025'},
   },
-  {id:1,name:'Basket',abbr:'BK',sector:'FoodTech',stageKey:'pre-a',daysLeft:22,
-   desc:"AI-powered local restaurant aggregator across 6 governorates. 2.8M monthly orders, zero delivery fleet.",
-   target:5000000,raised:3200000,min:5000,investors:310,
-   ytd:[100,108,115,122,118,130,138,145,152,160,158,170],mrr:'EGP 380K',
-   thesis:"Egypt's food delivery market is dominated by two international players who charge restaurants 25–30% commission. Basket charges 12% and solves the logistics problem differently — it doesn't own a single bike. Instead, Basket aggregates existing third-party couriers and routes orders dynamically. Lower cost, faster scale, better margins for everyone.",
-   model:"Commission of 12% on each order placed through the platform. Restaurants also pay a EGP 499/month subscription for analytics and marketing tools. Average order value is EGP 185. Basket processes 2.8M orders monthly across Cairo, Alexandria, Giza, Mansoura, Assiut, and Luxor.",
-   traction:[
-     {v:'EGP 380K',l:'Monthly Revenue',note:'as of Apr 2025'},
-     {v:'2.8M',l:'Monthly Orders',note:'as of Apr 2025'},
-     {v:'4,200',l:'Partner Restaurants',note:'across 6 governorates'},
-     {v:'12%',l:'Commission Rate',note:'vs 25–30% market avg'},
+  {id:1,name:'Sawari Ventures IV',manager:'Sawari Ventures',abbr:'SW',strategyKey:'multi-stage',daysLeft:19,
+   desc:"Pioneer of Egyptian venture since 2010. Fund IV targets 20 companies from pre-seed to Series B.",
+   target:8000000,raised:6600000,min:25000,investors:142,fundSize:120000000,vintage:'2024',
+   ytd:[100,104,108,106,112,118,116,122,128,124,130,136],
+   thesis:"Sawari has been investing in Egyptian technology companies since before there was an ecosystem to speak of. Fund IV builds on 14 years of local market intelligence, a portfolio of 60+ companies, and deep relationships with regional and global co-investors. The fund does not chase themes — it backs exceptional founders in any sector where Egypt has a structural advantage.",
+   strategy:"Sawari IV is a multi-stage fund deploying across 20 companies. Initial tickets range from USD 250K (pre-seed) to USD 3M (Series B). The fund is sector-agnostic but leans toward marketplaces, FinTech, and logistics — areas where Sawari's operator network adds the most value post-investment.",
+   trackRecord:[
+     {v:'Founded','l':'2010',note:'oldest active Egyptian VC fund'},
+     {v:'Portfolio','l':'60+ companies',note:'across Funds I–III'},
+     {v:'Fund III DPI','l':'0.8×',note:'2019 vintage, distributions ongoing'},
+     {v:'Notable Cos','l':'Vezeeta, Swvl, Elmenus',note:'Fund I–II portfolio'},
    ],
    team:[
-     {abbr:'OM',name:'Omar Mostafa',role:'CEO & Co-Founder',bg:'Ex-Careem Operations Lead Egypt. Built the Egypt city ops from 0 to 2M trips.'},
-     {abbr:'SA',name:'Sara Aziz',role:'CPO & Co-Founder',bg:'Former product manager at Swvl. Launched Swvl\'s B2B product in Egypt and Kenya.'},
+     {abbr:'WT',name:'Wael Amin',role:'Managing Director',bg:'Co-founder of IT Worx and Sawari. 25 years building and backing Egyptian technology companies.'},
+     {abbr:'SS',name:'Sara Sallam',role:'Partner',bg:'Leads Sawari\'s marketplace and consumer portfolio. Former VP at OLX Group Egypt.'},
    ],
-   proceeds:[
-     {l:'City Expansion',pct:45},
-     {l:'Tech & AI Platform',pct:25},
-     {l:'Restaurant Partnerships',pct:20},
-     {l:'Working Capital',pct:10},
+   allocation:[
+     {l:'Marketplaces & Consumer',pct:30},
+     {l:'FinTech',pct:28},
+     {l:'Logistics & Supply Chain',pct:22},
+     {l:'Other',pct:20},
    ],
-   terms:{min:'EGP 5,000',carry:'20%',proRata:'No',close:'15 Jun 2025'},
+   terms:{min:'EGP 25,000',mgmtFee:'2% per annum',carry:'20% above 8% hurdle',lockup:'10 years',close:'20 Jun 2025'},
   },
-  {id:2,name:'Pulse',abbr:'PL',sector:'HealthTech',stageKey:'series-a',daysLeft:91,
-   desc:"Telehealth and home nursing connecting patients to 3,400 verified clinicians across Egypt. 200K active patients.",
-   target:15000000,raised:11200000,min:25000,investors:489,
-   ytd:[100,103,110,118,125,130,138,134,142,150,158,162],mrr:'EGP 920K',
-   thesis:"Egypt has a severe shortage of doctors per capita — 0.8 per 1,000 people vs a WHO target of 2.5. The gap is widest outside Cairo. Pulse connects verified clinicians to patients via video, phone, and home visits. The home nursing product — Egypt's first at scale — is the differentiated moat. Insurance coverage has just begun.",
-   model:"Three revenue lines: (1) EGP 150–350 per teleconsultation, Pulse takes 25%. (2) EGP 800–2,000 per home nursing visit, Pulse takes 30%. (3) B2B contracts with 12 corporate clients for employee health benefits at EGP 3,500/employee/year.",
-   traction:[
-     {v:'EGP 920K',l:'Monthly Revenue',note:'as of Apr 2025'},
-     {v:'200K',l:'Active Patients',note:'as of Apr 2025'},
-     {v:'3,400',l:'Verified Clinicians',note:'doctors, nurses, physios'},
-     {v:'12',l:'Corporate Clients',note:'B2B health contracts'},
+  {id:2,name:'Nclude FinTech Fund I',manager:'Nclude',abbr:'NC',strategyKey:'sector-focus',daysLeft:74,
+   desc:"Egypt's first dedicated FinTech fund, backed by CIB, Banque Misr, and NBE. USD 107M AUM.",
+   target:20000000,raised:14800000,min:100000,investors:63,fundSize:650000000,vintage:'2023',
+   ytd:[100,101,104,108,106,112,116,114,120,124,122,128],
+   thesis:"Financial inclusion is the defining economic challenge of Egypt's next decade. Nclude was established with the backing of Egypt's three largest banks — CIB, Banque Misr, and National Bank of Egypt — specifically to deploy capital into companies that can move Egypt toward a cashless economy. The fund's bank backing gives portfolio companies a rare distribution advantage: direct access to millions of banked and unbanked Egyptians.",
+   strategy:"Nclude deploys USD 500K–5M per company into FinTech-adjacent businesses: payments, lending, insurance, wealth management, and B2B financial infrastructure. The fund does not compete with its banking LPs — it invests in companies that extend their reach into underserved segments.",
+   trackRecord:[
+     {v:'AUM','l':'USD 107M',note:'Fund I, closed 2023'},
+     {v:'Portfolio','l':'14 companies',note:'all active, none exited yet'},
+     {v:'LP Backing','l':'CIB, Banque Misr, NBE',note:'strategic distribution partners'},
+     {v:'Avg Ticket','l':'USD 3.5M',note:'initial investment'},
    ],
    team:[
-     {abbr:'HE',name:'Dr. Hana El-Shamy',role:'CEO & Co-Founder',bg:'Practicing physician turned entrepreneur. Ran Egypt\'s largest private home nursing network before building Pulse.'},
-     {abbr:'AR',name:'Ahmed Rizk',role:'CTO & Co-Founder',bg:'Ex-Google engineer. Led platform engineering for Google Health in MENA before returning to Egypt.'},
-     {abbr:'LM',name:'Layla Mansour',role:'COO',bg:'Former COO at Vezeeta. Scaled Vezeeta from 50K to 2M appointments per year.'},
+     {abbr:'AH',name:'Ahmed Hatem',role:'CEO',bg:'Former Head of Corporate Finance at CIB. Structured the Nclude fund alongside the CBE Digital Egypt initiative.'},
+     {abbr:'DK',name:'Dina Kamal',role:'Investment Director',bg:'10 years in FinTech investing across MENA. Previously at Wamda Capital and Beltone Private Equity.'},
+     {abbr:'KM',name:'Khaled Mansour',role:'Investment Manager',bg:'Covers payments and lending verticals. Former product lead at Fawry.'},
    ],
-   proceeds:[
-     {l:'Home Nursing Expansion',pct:40},
-     {l:'Technology Platform',pct:25},
-     {l:'B2B Sales',pct:20},
-     {l:'Regulatory & Compliance',pct:15},
+   allocation:[
+     {l:'Payments & Wallets',pct:40},
+     {l:'Lending & BNPL',pct:25},
+     {l:'Insurance & Wealth',pct:20},
+     {l:'B2B Financial Infrastructure',pct:15},
    ],
-   terms:{min:'EGP 25,000',carry:'20%',proRata:'Yes — all investors',close:'31 Aug 2025'},
+   terms:{min:'EGP 100,000',mgmtFee:'1.75% per annum',carry:'20% above 7% hurdle',lockup:'9 years',close:'30 Sep 2025'},
   },
-  {id:3,name:'Beacon',abbr:'BC',sector:'EdTech',stageKey:'pre-a',daysLeft:34,
-   desc:"B2B school management SaaS in 620 Egyptian K-12 schools. 95% annual contract renewal rate.",
-   target:6000000,raised:4800000,min:5000,investors:276,
-   ytd:[100,112,120,128,135,140,148,155,160,168,175,180],mrr:'EGP 540K',
-   thesis:"Egyptian private schools collect EGP 2–8B in fees annually but run on WhatsApp and paper. Beacon replaces that with a full school management operating system: attendance, fees, grades, parent communication, and government reporting — all in Arabic. 95% renewal tells you the product is sticky. The market is massive and almost entirely untouched.",
-   model:"Annual SaaS contracts ranging EGP 8,000–35,000 per school depending on size. Average contract: EGP 21,000/year. 620 schools under contract. Churn: 5% annually. Expansion revenue from premium modules (parent app, transport, canteen) adds 18% average upsell per school.",
-   traction:[
-     {v:'EGP 540K',l:'Monthly Revenue',note:'as of Apr 2025'},
-     {v:'620',l:'Schools',note:'K-12 across Egypt'},
-     {v:'95%',l:'Renewal Rate',note:'annual contracts'},
-     {v:'18%',l:'Upsell Rate',note:'premium modules'},
+  {id:3,name:'Shorooq Growth Fund II',manager:'Shorooq Partners',abbr:'SH',strategyKey:'growth',daysLeft:52,
+   desc:"MENA-focused growth equity fund. Egypt allocation targets Series B–C companies ready to scale regionally.",
+   target:15000000,raised:10200000,min:75000,investors:94,fundSize:250000000,vintage:'2024',
+   ytd:[100,103,107,110,108,114,118,122,118,124,128,132],
+   thesis:"Egypt is producing a cohort of Series B companies that have proven local product-market fit but lack the capital and operational infrastructure to execute regional expansion. Shorooq Growth II deploys growth equity — not venture — into companies where the business model is de-risked and the only question is speed and geography. The fund targets companies with USD 5M+ ARR and a clear path to 3x revenue within 36 months.",
+   strategy:"Shorooq II writes USD 5–15M initial tickets into 15–18 companies. The fund is operator-led: every portfolio company gets a dedicated Growth Partner who embeds for 6 months to execute expansion playbooks. Geographic focus: Egyptian companies expanding into KSA, UAE, and wider MENA.",
+   trackRecord:[
+     {v:'Fund I IRR','l':'28.6%',note:'2021 vintage, partially realised'},
+     {v:'Fund I TVPI','l':'1.8×',note:'3 partial exits to date'},
+     {v:'Portfolio','l':'22 companies',note:'active across MENA'},
+     {v:'Avg Hold','l':'5 years',note:'to exit or IPO'},
    ],
    team:[
-     {abbr:'AH',name:'Ali Hassan',role:'CEO & Co-Founder',bg:'Former Ministry of Education technology advisor. Spent 6 years digitising government school systems before going private.'},
-     {abbr:'DK',name:'Dina Khalil',role:'CTO',bg:'Software architect at McKinsey Digital Egypt. Led 3 major EdTech builds across the GCC before returning to Cairo.'},
+     {abbr:'SN',name:'Shorooq Nassar',role:'Founding Partner',bg:'Former Goldman Sachs MENA. 15 years in growth equity and late-stage venture across GCC and Levant.'},
+     {abbr:'RA',name:'Rania Aly',role:'Partner — Egypt',bg:'Based in Cairo. Previously Chief of Staff at Swvl during its hyper-growth phase and NASDAQ listing.'},
    ],
-   proceeds:[
-     {l:'Sales & Partnerships',pct:40},
-     {l:'Product Development',pct:30},
-     {l:'Customer Success',pct:20},
-     {l:'Operations',pct:10},
+   allocation:[
+     {l:'B2B SaaS & Enterprise',pct:35},
+     {l:'FinTech & Payments',pct:30},
+     {l:'E-commerce & Marketplaces',pct:20},
+     {l:'HealthTech',pct:15},
    ],
-   terms:{min:'EGP 5,000',carry:'20%',proRata:'No',close:'30 Jun 2025'},
+   terms:{min:'EGP 75,000',mgmtFee:'2% per annum',carry:'20% above 8% hurdle',lockup:'7 years',close:'15 Aug 2025'},
   },
 ];
 
 /* ── UPDATES FEED DATA ── */
 const UPDATES=[
-  {type:'asraa',typeLabel:'From ASRAA',logo:'AS',logoClass:'uf-logo-asraa',source:'ASRAA',time:'3 hours ago',
-   body:"New deal just dropped: <strong>Pulse</strong> has opened their Series A to the platform. 200K active patients, EGP 920K MRR. Review the deal room before spots fill.",
-   cta:'View Pulse Deal'},
-  {type:'document',typeLabel:'Document Ready',logo:'QI',source:'Qist',time:'5 hours ago',
-   body:"Your SPV Subscription Agreement for Qist (Seed Round) is ready for review and signature. Please sign within 7 days to confirm your position in the SPV.",
+  {type:'asraa',typeLabel:'From ASRAA',logo:'AS',logoClass:'uf-logo-asraa',source:'ASRAA',time:'2 hours ago',
+   body:"<strong>Nclude FinTech Fund I</strong> has expanded its ASRAA allocation by EGP 5M following strong demand from qualified investors. The feeder is now 74% subscribed. Minimum commitment is EGP 100,000.",
+   cta:'View Nclude Fund'},
+  {type:'document',typeLabel:'Document Ready',logo:'AV',source:'Algebra Ventures',time:'6 hours ago',
+   body:"Your commitment documentation for Algebra Ventures Fund III is ready for review. Please review and countersign the subscription agreement within 7 days to confirm your allocation.",
    cta:'Review & Sign'},
-  {type:'founder',typeLabel:'Founder Update',logo:'TG',source:'Taager',time:'2 days ago',
-   body:"Q1 2025 Letter from the CEO\n\nWe crossed EGP 1.2M in monthly GMV for the first time in March — a 31% increase quarter-on-quarter. We've added 3 new enterprise clients and expanded our logistics network to 4 new cities. We remain on track for our Series B close by Q4 2025.",
-   stats:[{v:'EGP 1.2M',l:'Q1 Monthly GMV'},{v:'+31%',l:'QoQ Growth'},{v:'3',l:'New Clients'}]},
-  {type:'milestone',typeLabel:'Milestone',logo:'FS',source:'Fuse',time:'4 days ago',
-   body:"Fuse just launched in 3 new governorates — Assiut, Minya, and Sohag. This takes their operational footprint to 9 cities and positions them as the only freight platform with Upper Egypt coverage.",
-   milestone:'Now live in 9 cities across Egypt 🎉'},
-  {type:'news',typeLabel:'News',logo:'TD',source:'Telda',time:'1 week ago',
-   body:"Telda was named one of Egypt's Top 10 Logistics Startups to Watch in 2025 by Wamda Research. The piece specifically highlights their AI-powered route optimisation engine, which has cut average delivery time by 22%.",
+  {type:'founder',typeLabel:'GP Update',logo:'SW',source:'Sawari Ventures',time:'2 days ago',
+   body:"Q1 2025 Portfolio Letter\n\nSawari Fund III had a strong first quarter. Two portfolio companies — Khazna Data Centers and Homzmart — closed follow-on rounds at markups of 2.4× and 1.9× respectively. We've made two new Fund IV investments that we will announce publicly in Q2. The fund is 60% deployed with 3 years of investment period remaining.",
+   stats:[{v:'2 New',l:'Fund IV Investments'},{v:'2.4×',l:'Top Markup'},{v:'60%',l:'Deployed'}]},
+  {type:'milestone',typeLabel:'Milestone',logo:'NC',source:'Nclude',time:'4 days ago',
+   body:"Nclude portfolio company MNT-Halan has closed a USD 157.5M debt facility — the largest ever raised by an Egyptian FinTech company. This validates the fund's thesis on lending infrastructure at scale.",
+   milestone:'Portfolio company MNT-Halan raises USD 157.5M 🎉'},
+  {type:'news',typeLabel:'News',logo:'AV',source:'Algebra Ventures',time:'1 week ago',
+   body:"Algebra Ventures Fund II portfolio company Paymob has been named to the 2025 Forbes Middle East FinTech 50 list for the third consecutive year. Paymob now processes transactions for over 350,000 merchants across 7 countries.",
    cta:'Read Article'},
-  {type:'founder',typeLabel:'Founder Update',logo:'AR',source:'Arc',time:'2 weeks ago',
-   body:"Q1 2025 — A Difficult Quarter\n\nWe want to be straight with you. Q1 was below plan. Revenue came in at EGP 890K vs a target of EGP 1.1M. The shortfall came from two enterprise contracts being delayed into Q2. Both have since signed. We are adjusting our Q2 targets accordingly and will share a revised forecast by end of May.",
-   stats:[{v:'EGP 890K',l:'Q1 Revenue'},{v:'EGP 1.1M',l:'Target'},{v:'Q2',l:'Contracts Moved'}]},
+  {type:'founder',typeLabel:'GP Update',logo:'SH',source:'Shorooq Partners',time:'2 weeks ago',
+   body:"Q1 2025 — Egypt Expansion Update\n\nShorooq Growth II made its first Egypt-domiciled investment in March — a Series B round in a B2B logistics company we'll announce publicly in May. Egypt represents 40% of our pipeline for the year. We expect to deploy into 4–5 Egyptian companies in 2025.",
+   stats:[{v:'1 New',l:'Egypt Investment'},{v:'40%',l:'Egypt Pipeline Share'},{v:'4–5',l:'Target 2025 Cos'}]},
   {type:'asraa',typeLabel:'From ASRAA',logo:'AS',logoClass:'uf-logo-asraa',source:'ASRAA',time:'3 weeks ago',
-   body:"Reminder: FRA regulations require all investors to complete annual re-certification before 30 June 2025. Your KYC and accredited investor status will be verified automatically — no action needed unless your financial situation has changed.",
+   body:"Annual re-certification reminder: qualified investor status must be reconfirmed before 30 June 2025. Your KYC status will be verified automatically — no action needed unless your financial situation has materially changed.",
   },
 ];
 
 /* ── POSITIONS DATA ── */
 const POSITIONS=[
-  {abbr:'TG',name:'Taager',sector:'FinTech · Series A',committed:'EGP 25,000',date:'Mar 2024',
-   status:'active',statusLabel:'Capital Deployed',statusClass:'pcs-active',
-   stage:['done','done','done'],stageLabels:['Committed','SPV Formed','Deployed'],
-   metrics:[{v:'EGP 25,000',l:'Committed'},{v:'Mar 2024',l:'Date In'},{v:'~6 yrs',l:'Est. Hold'}]},
-  {abbr:'FS',name:'Fuse',sector:'Logistics · Pre-Series B',committed:'EGP 10,000',date:'Jun 2024',
-   status:'active',statusLabel:'Capital Deployed',statusClass:'pcs-active',
-   stage:['done','done','done'],stageLabels:['Committed','SPV Formed','Deployed'],
-   metrics:[{v:'EGP 10,000',l:'Committed'},{v:'Jun 2024',l:'Date In'},{v:'~5 yrs',l:'Est. Hold'}]},
-  {abbr:'TD',name:'Telda',sector:'FreightTech · Series A',committed:'EGP 15,000',date:'Aug 2024',
-   status:'active',statusLabel:'Capital Deployed',statusClass:'pcs-active',
-   stage:['done','done','done'],stageLabels:['Committed','SPV Formed','Deployed'],
-   metrics:[{v:'EGP 15,000',l:'Committed'},{v:'Aug 2024',l:'Date In'},{v:'~5 yrs',l:'Est. Hold'}]},
-  {abbr:'AR',name:'Arc',sector:'FinTech · Series B',committed:'EGP 45,600',date:'Jan 2024',
-   status:'active',statusLabel:'Capital Deployed',statusClass:'pcs-active',
-   stage:['done','done','done'],stageLabels:['Committed','SPV Formed','Deployed'],
-   metrics:[{v:'EGP 45,600',l:'Committed'},{v:'Jan 2024',l:'Date In'},{v:'~4 yrs',l:'Est. Hold'}]},
-  {abbr:'BK',name:'Basket',sector:'FoodTech · Pre-Series A',committed:'EGP 8,000',date:'Nov 2024',
-   status:'spv',statusLabel:'SPV Being Formed',statusClass:'pcs-spv',
-   stage:['done','current',''],stageLabels:['Committed','SPV Forming','Deploy'],
-   metrics:[{v:'EGP 8,000',l:'Committed'},{v:'Nov 2024',l:'Date In'},{v:'Pending',l:'Deployment'}]},
-  {abbr:'CN',name:'Cashnow',sector:'FinTech · Series B',committed:'EGP 12,000',date:'Feb 2023',
-   status:'exited',statusLabel:'Exited',statusClass:'pcs-exited',
-   stage:['done','done','done'],stageLabels:['Committed','SPV Formed','Exited'],
-   metrics:[{v:'EGP 12,000',l:'Committed'},{v:'EGP 18,600',l:'Returned'},{v:'+55%',l:'Return'}]},
+  {abbr:'AV',name:'Algebra Ventures Fund III',sector:'Early Stage · 2024 Vintage',committed:'EGP 50,000',date:'Mar 2025',
+   status:'active',statusLabel:'Capital Called',statusClass:'pcs-active',
+   stage:['done','done','done','done'],stageLabels:['Committed','Feeder Closed','Capital Called','Active'],
+   metrics:[{v:'EGP 50,000',l:'Committed'},{v:'Mar 2025',l:'Date In'},{v:'8 yrs',l:'Lock-up'}]},
+  {abbr:'SW',name:'Sawari Ventures IV',sector:'Multi-Stage · 2024 Vintage',committed:'EGP 25,000',date:'Jan 2025',
+   status:'active',statusLabel:'Capital Called',statusClass:'pcs-active',
+   stage:['done','done','done','done'],stageLabels:['Committed','Feeder Closed','Capital Called','Active'],
+   metrics:[{v:'EGP 25,000',l:'Committed'},{v:'Jan 2025',l:'Date In'},{v:'10 yrs',l:'Lock-up'}]},
+  {abbr:'NC',name:'Nclude FinTech Fund I',sector:'Sector Focus · 2023 Vintage',committed:'EGP 100,000',date:'Nov 2024',
+   status:'active',statusLabel:'Capital Called',statusClass:'pcs-active',
+   stage:['done','done','done','done'],stageLabels:['Committed','Feeder Closed','Capital Called','Active'],
+   metrics:[{v:'EGP 100,000',l:'Committed'},{v:'Nov 2024',l:'Date In'},{v:'9 yrs',l:'Lock-up'}]},
+  {abbr:'SH',name:'Shorooq Growth Fund II',sector:'Growth · 2024 Vintage',committed:'EGP 75,000',date:'Apr 2025',
+   status:'spv',statusLabel:'Feeder Closing',statusClass:'pcs-spv',
+   stage:['done','current','',''],stageLabels:['Committed','Feeder Closing','Capital Call','Active'],
+   metrics:[{v:'EGP 75,000',l:'Committed'},{v:'Apr 2025',l:'Date In'},{v:'Pending',l:'Capital Call'}]},
 ];
 
 let featCI=null, dealCI=null;
@@ -932,34 +1136,34 @@ function go(id,btn){
   if(id==='positions')renderPositions();
 }
 
-/* ── RENDER DEALS (card scroll) ── */
-function renderDeals(){
-  document.getElementById('deal-scroll').innerHTML=DEALS.slice(1).map(d=>{
-    const pct=Math.round(d.raised/d.target*100);
-    const urgent=d.daysLeft<=30;
-    return`<div class="dcard" onclick="openDeal(${d.id})">
+/* ── RENDER FUNDS (card scroll) ── */
+function renderFunds(){
+  document.getElementById('deal-scroll').innerHTML=FUNDS.slice(1).map(f=>{
+    const pct=Math.round(f.raised/f.target*100);
+    const urgent=f.daysLeft<=30;
+    return`<div class="dcard" onclick="openFund(${f.id})">
       <div class="dc-top">
-        <div class="dc-logo">${d.abbr}</div>
+        <div class="dc-logo">${f.abbr}</div>
         <div class="dc-badges">
-          <span class="badge ${STAGE_CLASS[d.stageKey]}">${STAGE_LABEL[d.stageKey]}</span>
-          <div class="dc-live"><div class="dc-live-dot"></div>Live</div>
+          <span class="badge ${STRATEGY_CLASS[f.strategyKey]}">${STRATEGY_LABEL[f.strategyKey]}</span>
+          <div class="dc-live"><div class="dc-live-dot"></div>Open</div>
         </div>
       </div>
-      <div class="dname">${d.name}</div>
-      <div class="dsec">${d.sector}</div>
-      <div class="ddesc">${d.desc}</div>
+      <div class="dname">${f.name}</div>
+      <div class="dsec">${f.manager} · ${f.vintage} Vintage</div>
+      <div class="ddesc">${f.desc}</div>
       <div class="dc-prog-wrap">
         <div class="dc-prog-label">
-          <span class="target">EGP ${(d.target/1e6).toFixed(1)}M target</span>
+          <span class="target">EGP ${(f.target/1e6).toFixed(1)}M feeder target</span>
           <span class="pct">${pct}%</span>
         </div>
         <div class="pbar"><div class="pfill" style="width:${pct}%"></div></div>
       </div>
       <div class="dc-footer">
-        <div class="dc-footer-l"><span>${d.investors}</span> investors</div>
-        <div class="dc-days${urgent?' urgent':''}">${d.daysLeft}d left</div>
+        <div class="dc-footer-l"><span>${f.investors}</span> LPs</div>
+        <div class="dc-days${urgent?' urgent':''}">${f.daysLeft}d left</div>
       </div>
-      <button class="dinvbtn">View Deal →</button>
+      <button class="dinvbtn">View Fund →</button>
     </div>`;
   }).join('');
 }
@@ -968,7 +1172,7 @@ function renderDeals(){
 function drawFeatChart(){
   const ctx=document.getElementById('featChart');if(!ctx)return;
   if(featCI)featCI.destroy();
-  featCI=new Chart(ctx,{type:'line',data:{labels:Array(12).fill(''),datasets:[{data:DEALS[0].ytd,borderColor:'rgba(255,255,255,.7)',backgroundColor:'rgba(255,255,255,.06)',fill:true,tension:.45,pointRadius:0,borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{display:false}}}});
+  featCI=new Chart(ctx,{type:'line',data:{labels:Array(12).fill(''),datasets:[{data:FUNDS[0].ytd,borderColor:'rgba(255,255,255,.7)',backgroundColor:'rgba(255,255,255,.06)',fill:true,tension:.45,pointRadius:0,borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{display:false}}}});
 }
 
 /* ── RENDER UPDATES ── */
@@ -1022,20 +1226,20 @@ function renderPositions(){
   }).join('');
 }
 
-/* ── DEAL PITCH ROOM ── */
-function openDeal(id){
-  const d=DEALS[id];
-  const pct=Math.round(d.raised/d.target*100);
-  const tractHtml=d.traction.map(t=>`<div class="dr-kv"><div class="v">${t.v}</div><div class="l">${t.l}</div><div class="dr-kv-note">${t.note}</div></div>`).join('');
-  const teamHtml=d.team.map(m=>`<div class="dr-member"><div class="dr-av">${m.abbr}</div><div><div class="dr-member-name">${m.name}</div><div class="dr-member-role">${m.role}</div><div class="dr-member-bg">${m.bg}</div></div></div>`).join('');
-  const procHtml=d.proceeds.map(p=>`<div class="dr-proc-row"><div class="dr-proc-label">${p.l}</div><div class="dr-proc-bar-wrap"><div class="dr-proc-bar" style="width:${p.pct}%"></div></div><div class="dr-proc-pct">${p.pct}%</div></div>`).join('');
+/* ── FUND DATA ROOM ── */
+function openFund(id){
+  const f=FUNDS[id];
+  const pct=Math.round(f.raised/f.target*100);
+  const trackHtml=f.trackRecord.map(t=>`<div class="dr-kv"><div class="v">${t.v}</div><div class="l">${t.l}</div><div class="dr-kv-note">${t.note}</div></div>`).join('');
+  const teamHtml=f.team.map(m=>`<div class="dr-member"><div class="dr-av">${m.abbr}</div><div><div class="dr-member-name">${m.name}</div><div class="dr-member-role">${m.role}</div><div class="dr-member-bg">${m.bg}</div></div></div>`).join('');
+  const allocHtml=f.allocation.map(a=>`<div class="dr-proc-row"><div class="dr-proc-label">${a.l}</div><div class="dr-proc-bar-wrap"><div class="dr-proc-bar" style="width:${a.pct}%"></div></div><div class="dr-proc-pct">${a.pct}%</div></div>`).join('');
 
   document.getElementById('modal-body').innerHTML=`
     <div class="mhandle" style="margin:12px auto 0"></div>
     <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px 0">
       <div style="display:flex;align-items:center;gap:8px">
-        <span style="font-size:9.5px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:1px">${d.sector}</span>
-        <span class="badge ${STAGE_CLASS[d.stageKey]}">${STAGE_LABEL[d.stageKey]}</span>
+        <span style="font-size:9.5px;color:var(--t3);font-weight:700;text-transform:uppercase;letter-spacing:1px">${f.manager}</span>
+        <span class="badge ${STRATEGY_CLASS[f.strategyKey]}">${STRATEGY_LABEL[f.strategyKey]}</span>
       </div>
       <button class="mclose" onclick="closeModal()"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     </div>
@@ -1044,57 +1248,57 @@ function openDeal(id){
       <div class="dr-video-bg"></div>
       <div class="dr-video-inner">
         <div class="dr-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3" fill="#fff"/></svg></div>
-        <div class="dr-video-lbl">Founder Pitch — ${d.name}</div>
-        <div class="dr-video-dur">Watch · 4 min</div>
+        <div class="dr-video-lbl">GP Presentation — ${f.name}</div>
+        <div class="dr-video-dur">Watch · 6 min</div>
       </div>
     </div>
 
     <div class="dr-content">
       <div class="dr-co-row">
-        <div class="dr-m-logo">${d.abbr}</div>
+        <div class="dr-m-logo">${f.abbr}</div>
         <div>
-          <div class="dr-m-name">${d.name}</div>
-          <div class="dr-m-meta">${d.investors} investors committed · ${d.daysLeft} days left</div>
+          <div class="dr-m-name">${f.name}</div>
+          <div class="dr-m-meta">${f.investors} LPs committed · ${f.daysLeft} days to close</div>
           <div class="dr-stage-row">
-            <div class="dc-live"><div class="dc-live-dot"></div><span style="font-size:9px;color:var(--t3);font-weight:700;letter-spacing:.4px;text-transform:uppercase">Live</span></div>
+            <div class="dc-live"><div class="dc-live-dot"></div><span style="font-size:9px;color:var(--t3);font-weight:700;letter-spacing:.4px;text-transform:uppercase">Open</span></div>
           </div>
         </div>
       </div>
 
       <div class="dr-section">
-        <div class="dr-slabel">The Opportunity</div>
-        <div class="dr-body">${d.thesis}</div>
+        <div class="dr-slabel">Fund Thesis</div>
+        <div class="dr-body">${f.thesis}</div>
       </div>
 
       <div class="dr-section">
-        <div class="dr-slabel">Business Model</div>
-        <div class="dr-body">${d.model}</div>
+        <div class="dr-slabel">Investment Strategy</div>
+        <div class="dr-body">${f.strategy}</div>
       </div>
 
       <div class="dr-section">
-        <div class="dr-slabel">Traction</div>
-        <div class="dr-kv-grid">${tractHtml}</div>
+        <div class="dr-slabel">Track Record</div>
+        <div class="dr-kv-grid">${trackHtml}</div>
       </div>
 
       <div class="dr-section">
-        <div class="dr-slabel">Team</div>
+        <div class="dr-slabel">GP Team</div>
         <div class="dr-team">${teamHtml}</div>
       </div>
 
       <div class="dr-section">
-        <div class="dr-slabel">Use of Proceeds</div>
-        <div class="dr-proceeds">${procHtml}</div>
+        <div class="dr-slabel">Target Portfolio</div>
+        <div class="dr-proceeds">${allocHtml}</div>
       </div>
 
       <div class="dr-section">
-        <div class="dr-slabel">SPV Terms</div>
+        <div class="dr-slabel">Feeder Terms</div>
         <div class="dr-terms">
-          <div class="dr-term-row"><span class="dr-term-k">Minimum Ticket</span><span class="dr-term-v">${d.terms.min}</span></div>
-          <div class="dr-term-row"><span class="dr-term-k">ASRAA Carry</span><span class="dr-term-v">${d.terms.carry} on profits</span></div>
-          <div class="dr-term-row"><span class="dr-term-k">Pro-Rata Rights</span><span class="dr-term-v">${d.terms.proRata}</span></div>
-          <div class="dr-term-row"><span class="dr-term-k">Round Closes</span><span class="dr-term-v">${d.terms.close}</span></div>
-          <div class="dr-term-row"><span class="dr-term-k">Structure</span><span class="dr-term-v">Equity via SPV</span></div>
-          <div class="dr-term-row"><span class="dr-term-k">Escrow</span><span class="dr-term-v">Third-party, regulated</span></div>
+          <div class="dr-term-row"><span class="dr-term-k">Minimum Commitment</span><span class="dr-term-v">${f.terms.min}</span></div>
+          <div class="dr-term-row"><span class="dr-term-k">Management Fee</span><span class="dr-term-v">${f.terms.mgmtFee}</span></div>
+          <div class="dr-term-row"><span class="dr-term-k">Carried Interest</span><span class="dr-term-v">${f.terms.carry}</span></div>
+          <div class="dr-term-row"><span class="dr-term-k">Lock-up Period</span><span class="dr-term-v">${f.terms.lockup}</span></div>
+          <div class="dr-term-row"><span class="dr-term-k">Feeder Closes</span><span class="dr-term-v">${f.terms.close}</span></div>
+          <div class="dr-term-row"><span class="dr-term-k">Structure</span><span class="dr-term-v">LP Units via Feeder</span></div>
         </div>
       </div>
 
@@ -1103,39 +1307,44 @@ function openDeal(id){
         <div class="dr-docs">
           <div class="dr-doc">
             <div class="dr-doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-            <div><div class="dr-doc-name">Investor Deck</div><div class="dr-doc-sub">PDF · 18 slides</div></div>
+            <div><div class="dr-doc-name">Fund Prospectus</div><div class="dr-doc-sub">PDF · Full offering document</div></div>
             <span class="dr-lock">🔒 KYC Required</span>
           </div>
           <div class="dr-doc">
             <div class="dr-doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-            <div><div class="dr-doc-name">Financial Model</div><div class="dr-doc-sub">Excel · 3-year forecast</div></div>
+            <div><div class="dr-doc-name">GP Track Record</div><div class="dr-doc-sub">PDF · Audited prior fund performance</div></div>
             <span class="dr-lock">🔒 KYC Required</span>
           </div>
           <div class="dr-doc">
             <div class="dr-doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-            <div><div class="dr-doc-name">SPV Term Sheet</div><div class="dr-doc-sub">PDF · legal document</div></div>
+            <div><div class="dr-doc-name">LP Agreement</div><div class="dr-doc-sub">PDF · Legal subscription document</div></div>
+            <span class="dr-lock">🔒 KYC Required</span>
+          </div>
+          <div class="dr-doc">
+            <div class="dr-doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div><div class="dr-doc-name">ASRAA Feeder NDA</div><div class="dr-doc-sub">PDF · Confidentiality agreement</div></div>
             <span class="dr-lock">🔒 KYC Required</span>
           </div>
         </div>
       </div>
 
       <div class="dr-section">
-        <div class="dr-risk">⚠️ <strong>Risk Disclosure:</strong> This is a private placement in an early-stage company. Your investment is illiquid and there is no guaranteed return. You may lose the entire amount committed. ASRAA SPVs are structured under Egyptian Contract Law. Accredited investors only (net worth ≥ EGP 5M or annual income ≥ EGP 1M).</div>
+        <div class="dr-risk">⚠️ <strong>Risk Disclosure:</strong> This is a commitment to a private fund via a feeder vehicle. Fund units are illiquid for the duration of the fund's life (typically 7–10 years). There is no guaranteed return and you may lose the entire amount committed. Past performance of the GP is not indicative of future results. Qualified investors only (net worth ≥ EGP 5M or annual income ≥ EGP 1M).</div>
       </div>
     </div>
 
     <div class="dr-invest-wrap">
       <div class="dr-fund-bar">
         <div class="dr-fund-top">
-          <span>EGP ${(d.raised/1e6).toFixed(1)}M raised of EGP ${(d.target/1e6).toFixed(1)}M target</span>
-          <span>${pct}% funded</span>
+          <span>EGP ${(f.raised/1e6).toFixed(1)}M committed of EGP ${(f.target/1e6).toFixed(1)}M feeder target</span>
+          <span>${pct}% subscribed</span>
         </div>
         <div class="dr-f-pbar"><div class="dr-f-pfill" style="width:${pct}%"></div></div>
       </div>
       <div class="inv-lbl">Your Commitment (EGP)</div>
-      <input type="number" class="inv-input" id="inv-amt" placeholder="Min EGP ${d.min.toLocaleString()}" min="${d.min}" step="500" style="margin-bottom:10px">
-      <div class="inv-hint">Minimum EGP ${d.min.toLocaleString()} · Funds held in escrow · No money moves until you confirm wire instructions</div>
-      <button class="inv-cta" onclick="submitInv(${d.id})">Queue Commitment — Review &amp; Confirm</button>
+      <input type="number" class="inv-input" id="inv-amt" placeholder="Min EGP ${f.min.toLocaleString()}" min="${f.min}" step="1000" style="margin-bottom:10px">
+      <div class="inv-hint">Minimum EGP ${f.min.toLocaleString()} · Funds held in escrow · No money moves until you confirm wire instructions</div>
+      <button class="inv-cta" onclick="submitInv(${f.id})">Queue Commitment — Review &amp; Confirm</button>
     </div>`;
 
   document.getElementById('modal').classList.add('on');
@@ -1143,13 +1352,13 @@ function openDeal(id){
 
 function submitInv(id){
   const amt=parseInt(document.getElementById('inv-amt').value);
-  const d=DEALS[id];
-  if(!amt||amt<d.min){document.getElementById('inv-amt').style.borderColor='var(--red)';return;}
+  const f=FUNDS[id];
+  if(!amt||amt<f.min){document.getElementById('inv-amt').style.borderColor='var(--red)';return;}
   document.getElementById('modal-body').innerHTML=`
     <div class="success-sheet">
       <div class="suc-ic"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
       <div class="suc-title">Commitment Queued</div>
-      <p class="suc-sub"><strong>EGP ${amt.toLocaleString()}</strong> in <strong>${d.name}</strong> is in the queue.<br><br>Our compliance team will verify your accreditation status and send wire instructions to your registered email within 24 hours. No money moves until you confirm.</p>
+      <p class="suc-sub"><strong>EGP ${amt.toLocaleString()}</strong> in <strong>${f.name}</strong> is in the queue.<br><br>Our compliance team will verify your accreditation status and send wire instructions to your registered email within 24 hours. No money moves until you confirm.</p>
       <button class="done-btn" onclick="closeModal()">Done</button>
     </div>`;
 }
@@ -1157,32 +1366,89 @@ function submitInv(id){
 function closeModal(){document.getElementById('modal').classList.remove('on');}
 function handleOvClick(e){if(e.target===document.getElementById('modal'))closeModal();}
 
-function showFounderForm(){
+function showGPForm(){
   document.getElementById('modal-body').innerHTML=`
     <div class="mi">
       <div class="mclose-row">
-        <span class="m-stage">Application</span>
+        <span class="m-stage">GP Application</span>
         <button class="mclose" onclick="closeModal()"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
       </div>
-      <div style="font-size:24px;font-weight:900;letter-spacing:-.8px;margin-bottom:6px">List Your Startup</div>
-      <p style="font-size:12px;color:var(--t2);line-height:1.7;margin-bottom:18px">Tell us about your company. Our investment committee reviews all applications within 5 business days.</p>
+      <div style="font-size:24px;font-weight:900;letter-spacing:-.8px;margin-bottom:6px">Apply to Distribute</div>
+      <p style="font-size:12px;color:var(--t2);line-height:1.7;margin-bottom:18px">Tell us about your fund. ASRAA reviews all GP applications within 5 business days.</p>
       <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">
-        <input class="form-input" placeholder="Company name">
-        <input class="form-input" placeholder="Sector (e.g. FinTech, EdTech)">
-        <input class="form-input" placeholder="Raising amount (EGP)" type="number">
-        <input class="form-input" placeholder="Monthly revenue (EGP)" type="number">
-        <input class="form-input" placeholder="Your email" type="email">
+        <input class="form-input" placeholder="Fund name">
+        <input class="form-input" placeholder="Management company">
+        <input class="form-input" placeholder="Fund size (EGP)" type="number">
+        <input class="form-input" placeholder="Vintage year" type="number">
+        <input class="form-input" placeholder="Strategy / focus sectors">
+        <input class="form-input" placeholder="GP email" type="email">
+        <input class="form-input" placeholder="Link to LP materials (optional)">
       </div>
       <div style="background:var(--bg);border-radius:var(--rsm);padding:13px 14px;font-size:11px;color:var(--t3);line-height:1.75;margin-bottom:16px;border:1px solid var(--border)">
-        Listing is a private placement process under Egyptian law. No listing fee at this stage.
+        Fund distribution via ASRAA is a regulated process under Egyptian law. No upfront fee at application stage.
       </div>
       <button class="inv-cta" onclick="closeModal()">Submit Application →</button>
     </div>`;
   document.getElementById('modal').classList.add('on');
 }
 
+/* ── ONBOARDING GATE ── */
+const OB_ANSWERS={q1:false,q2:false,q3:false};
+const OB_CERT=[false,false,false];
+
+function obNext(step){
+  document.querySelectorAll('.ob-step').forEach(s=>s.classList.remove('on'));
+  document.getElementById('ob-s'+step).classList.add('on');
+}
+
+function obCheckScroll(){
+  const box=document.getElementById('ob-scroll');
+  const hint=document.getElementById('ob-scroll-hint');
+  const btn=document.getElementById('ob-reg-btn');
+  if(box.scrollTop+box.clientHeight>=box.scrollHeight-10){
+    btn.disabled=false;
+    hint.textContent='✓ All disclosures read';
+    hint.style.color='var(--grn)';
+  }
+}
+
+function obAnswer(btn,qid,correct){
+  const grp=document.getElementById(qid);
+  if(grp.querySelector('.correct')||grp.querySelector('.wrong'))return;
+  btn.classList.add(correct?'correct':'wrong');
+  if(correct){OB_ANSWERS[qid]=true;}
+  else{grp.querySelectorAll('.ob-opt').forEach(o=>{if(o!==btn)o.classList.add(o.textContent.includes(correct)?'correct':'');});}
+  grp.querySelectorAll('.ob-opt').forEach(o=>o.disabled=true);
+  // reveal correct if wrong
+  if(!correct){
+    grp.querySelectorAll('.ob-opt').forEach(o=>{
+      if(!o.classList.contains('wrong'))o.classList.add('correct');
+    });
+    // must retry — don't enable
+  } else {
+    if(Object.values(OB_ANSWERS).every(Boolean)){
+      document.getElementById('ob-quiz-btn').disabled=false;
+    }
+  }
+}
+
+function obToggleCert(row,idx){
+  row.classList.toggle('checked');
+  OB_CERT[idx]=row.classList.contains('checked');
+  document.getElementById('ob-cert-btn').disabled=!OB_CERT.every(Boolean);
+}
+
+function obFinish(){
+  sessionStorage.setItem('asraa_ob','1');
+  document.getElementById('ob-gate').classList.add('hidden');
+}
+
+if(sessionStorage.getItem('asraa_ob')==='1'){
+  document.getElementById('ob-gate').classList.add('hidden');
+}
+
 /* ── INIT ── */
-renderDeals();
+renderFunds();
 setTimeout(drawFeatChart,250);
 </script>
 </body>
