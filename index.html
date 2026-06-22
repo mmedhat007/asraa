@@ -336,6 +336,14 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
 .uf-header{display:flex;align-items:center;gap:10px;padding:14px 14px 10px}
 .uf-logo{width:36px;height:36px;border-radius:9px;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;color:var(--black);flex-shrink:0;letter-spacing:-.5px}
 .uf-logo-asraa{background:var(--black);color:#fff;border-color:var(--black)}
+.logo-av{background:rgba(37,99,235,.1);color:#2563EB;border-color:rgba(37,99,235,.22)}
+.logo-sw{background:rgba(22,163,74,.1);color:#16a34a;border-color:rgba(22,163,74,.22)}
+.logo-nc{background:rgba(124,58,237,.1);color:#7c3aed;border-color:rgba(124,58,237,.22)}
+.logo-sh{background:rgba(217,119,6,.1);color:#d97706;border-color:rgba(217,119,6,.22)}
+.feat-logo.logo-av{background:rgba(37,99,235,.28);color:#93c5fd;border-color:rgba(37,99,235,.45)}
+.feat-logo.logo-sw{background:rgba(22,163,74,.28);color:#86efac;border-color:rgba(22,163,74,.45)}
+.feat-logo.logo-nc{background:rgba(124,58,237,.28);color:#c4b5fd;border-color:rgba(124,58,237,.45)}
+.feat-logo.logo-sh{background:rgba(217,119,6,.28);color:#fde68a;border-color:rgba(217,119,6,.45)}
 .uf-meta{flex:1;min-width:0}
 .uf-source{font-size:12.5px;font-weight:700;letter-spacing:-.2px}
 .uf-time{font-size:10px;color:var(--t3);margin-top:1px;font-weight:500}
@@ -723,7 +731,7 @@ html,body{height:100%;background:#D8D8D4;color:var(--t1);font-family:'Inter',san
   <div class="feat" onclick="openFund(0)">
     <div class="feat-inner">
       <div class="feat-hdr">
-        <div class="feat-logo">AV</div>
+        <div class="feat-logo logo-av">AV</div>
         <div>
           <div class="feat-name">Algebra Ventures Fund III</div>
           <div class="feat-sub">Early Stage · 2024 Vintage · EGP 180M fund</div>
@@ -967,7 +975,7 @@ const STRATEGY_LABEL={'early-stage':'Early Stage',growth:'Growth','sector-focus'
 
 /* ── FUNDS DATA ── */
 const FUNDS=[
-  {id:0,name:'Algebra Ventures Fund III',manager:'Algebra Ventures',abbr:'AV',strategyKey:'early-stage',daysLeft:38,
+  {id:0,name:'Algebra Ventures Fund III',manager:'Algebra Ventures',abbr:'AV',logoClass:'logo-av',strategyKey:'early-stage',daysLeft:38,
    desc:"Egypt's most active early-stage fund. 40+ portfolio companies, 3 exits. Now open to qualified ASRAA investors.",
    target:12000000,raised:8400000,min:50000,investors:87,fundSize:180000000,vintage:'2024',
    ytd:[100,102,106,104,110,116,112,118,124,130,128,135],
@@ -992,7 +1000,7 @@ const FUNDS=[
    ],
    terms:{min:'EGP 50,000',mgmtFee:'2% per annum',carry:'20% above 8% hurdle',lockup:'8 years',close:'31 Jul 2025'},
   },
-  {id:1,name:'Sawari Ventures IV',manager:'Sawari Ventures',abbr:'SW',strategyKey:'multi-stage',daysLeft:19,
+  {id:1,name:'Sawari Ventures IV',manager:'Sawari Ventures',abbr:'SW',logoClass:'logo-sw',strategyKey:'multi-stage',daysLeft:19,
    desc:"Pioneer of Egyptian venture since 2010. Fund IV targets 20 companies from pre-seed to Series B.",
    target:8000000,raised:6600000,min:25000,investors:142,fundSize:120000000,vintage:'2024',
    ytd:[100,104,108,106,112,118,116,122,128,124,130,136],
@@ -1016,7 +1024,7 @@ const FUNDS=[
    ],
    terms:{min:'EGP 25,000',mgmtFee:'2% per annum',carry:'20% above 8% hurdle',lockup:'10 years',close:'20 Jun 2025'},
   },
-  {id:2,name:'Nclude FinTech Fund I',manager:'Nclude',abbr:'NC',strategyKey:'sector-focus',daysLeft:74,
+  {id:2,name:'Nclude FinTech Fund I',manager:'Nclude',abbr:'NC',logoClass:'logo-nc',strategyKey:'sector-focus',daysLeft:74,
    desc:"Egypt's first dedicated FinTech fund, backed by CIB, Banque Misr, and NBE. USD 107M AUM.",
    target:20000000,raised:14800000,min:100000,investors:63,fundSize:650000000,vintage:'2023',
    ytd:[100,101,104,108,106,112,116,114,120,124,122,128],
@@ -1041,7 +1049,7 @@ const FUNDS=[
    ],
    terms:{min:'EGP 100,000',mgmtFee:'1.75% per annum',carry:'20% above 7% hurdle',lockup:'9 years',close:'30 Sep 2025'},
   },
-  {id:3,name:'Shorooq Growth Fund II',manager:'Shorooq Partners',abbr:'SH',strategyKey:'growth',daysLeft:52,
+  {id:3,name:'Shorooq Growth Fund II',manager:'Shorooq Partners',abbr:'SH',logoClass:'logo-sh',strategyKey:'growth',daysLeft:52,
    desc:"MENA-focused growth equity fund. Egypt allocation targets Series B–C companies ready to scale regionally.",
    target:15000000,raised:10200000,min:75000,investors:94,fundSize:250000000,vintage:'2024',
    ytd:[100,103,107,110,108,114,118,122,118,124,128,132],
@@ -1072,19 +1080,19 @@ const UPDATES=[
   {type:'asraa',typeLabel:'From ASRAA',logo:'AS',logoClass:'uf-logo-asraa',source:'ASRAA',time:'2 hours ago',
    body:"<strong>Nclude FinTech Fund I</strong> has expanded its ASRAA allocation by EGP 5M following strong demand from qualified investors. The feeder is now 74% subscribed. Minimum commitment is EGP 100,000.",
    cta:'View Nclude Fund'},
-  {type:'document',typeLabel:'Document Ready',logo:'AV',source:'Algebra Ventures',time:'6 hours ago',
+  {type:'document',typeLabel:'Document Ready',logo:'AV',logoClass:'logo-av',source:'Algebra Ventures',time:'6 hours ago',
    body:"Your commitment documentation for Algebra Ventures Fund III is ready for review. Please review and countersign the subscription agreement within 7 days to confirm your allocation.",
    cta:'Review & Sign'},
-  {type:'founder',typeLabel:'GP Update',logo:'SW',source:'Sawari Ventures',time:'2 days ago',
+  {type:'founder',typeLabel:'GP Update',logo:'SW',logoClass:'logo-sw',source:'Sawari Ventures',time:'2 days ago',
    body:"Q1 2025 Portfolio Letter\n\nSawari Fund III had a strong first quarter. Two portfolio companies — Khazna Data Centers and Homzmart — closed follow-on rounds at markups of 2.4× and 1.9× respectively. We've made two new Fund IV investments that we will announce publicly in Q2. The fund is 60% deployed with 3 years of investment period remaining.",
    stats:[{v:'2 New',l:'Fund IV Investments'},{v:'2.4×',l:'Top Markup'},{v:'60%',l:'Deployed'}]},
-  {type:'milestone',typeLabel:'Milestone',logo:'NC',source:'Nclude',time:'4 days ago',
+  {type:'milestone',typeLabel:'Milestone',logo:'NC',logoClass:'logo-nc',source:'Nclude',time:'4 days ago',
    body:"Nclude portfolio company MNT-Halan has closed a USD 157.5M debt facility — the largest ever raised by an Egyptian FinTech company. This validates the fund's thesis on lending infrastructure at scale.",
    milestone:'Portfolio company MNT-Halan raises USD 157.5M 🎉'},
-  {type:'news',typeLabel:'News',logo:'AV',source:'Algebra Ventures',time:'1 week ago',
+  {type:'news',typeLabel:'News',logo:'AV',logoClass:'logo-av',source:'Algebra Ventures',time:'1 week ago',
    body:"Algebra Ventures Fund II portfolio company Paymob has been named to the 2025 Forbes Middle East FinTech 50 list for the third consecutive year. Paymob now processes transactions for over 350,000 merchants across 7 countries.",
    cta:'Read Article'},
-  {type:'founder',typeLabel:'GP Update',logo:'SH',source:'Shorooq Partners',time:'2 weeks ago',
+  {type:'founder',typeLabel:'GP Update',logo:'SH',logoClass:'logo-sh',source:'Shorooq Partners',time:'2 weeks ago',
    body:"Q1 2025 — Egypt Expansion Update\n\nShorooq Growth II made its first Egypt-domiciled investment in March — a Series B round in a B2B logistics company we'll announce publicly in May. Egypt represents 40% of our pipeline for the year. We expect to deploy into 4–5 Egyptian companies in 2025.",
    stats:[{v:'1 New',l:'Egypt Investment'},{v:'40%',l:'Egypt Pipeline Share'},{v:'4–5',l:'Target 2025 Cos'}]},
   {type:'asraa',typeLabel:'From ASRAA',logo:'AS',logoClass:'uf-logo-asraa',source:'ASRAA',time:'3 weeks ago',
@@ -1094,19 +1102,19 @@ const UPDATES=[
 
 /* ── POSITIONS DATA ── */
 const POSITIONS=[
-  {abbr:'AV',name:'Algebra Ventures Fund III',sector:'Early Stage · 2024 Vintage',committed:'EGP 50,000',date:'Mar 2025',
+  {abbr:'AV',logoClass:'logo-av',name:'Algebra Ventures Fund III',sector:'Early Stage · 2024 Vintage',committed:'EGP 50,000',date:'Mar 2025',
    status:'active',statusLabel:'Capital Called',statusClass:'pcs-active',
    stage:['done','done','done','done'],stageLabels:['Committed','Feeder Closed','Capital Called','Active'],
    metrics:[{v:'EGP 50,000',l:'Committed'},{v:'Mar 2025',l:'Date In'},{v:'8 yrs',l:'Lock-up'}]},
-  {abbr:'SW',name:'Sawari Ventures IV',sector:'Multi-Stage · 2024 Vintage',committed:'EGP 25,000',date:'Jan 2025',
+  {abbr:'SW',logoClass:'logo-sw',name:'Sawari Ventures IV',sector:'Multi-Stage · 2024 Vintage',committed:'EGP 25,000',date:'Jan 2025',
    status:'active',statusLabel:'Capital Called',statusClass:'pcs-active',
    stage:['done','done','done','done'],stageLabels:['Committed','Feeder Closed','Capital Called','Active'],
    metrics:[{v:'EGP 25,000',l:'Committed'},{v:'Jan 2025',l:'Date In'},{v:'10 yrs',l:'Lock-up'}]},
-  {abbr:'NC',name:'Nclude FinTech Fund I',sector:'Sector Focus · 2023 Vintage',committed:'EGP 100,000',date:'Nov 2024',
+  {abbr:'NC',logoClass:'logo-nc',name:'Nclude FinTech Fund I',sector:'Sector Focus · 2023 Vintage',committed:'EGP 100,000',date:'Nov 2024',
    status:'active',statusLabel:'Capital Called',statusClass:'pcs-active',
    stage:['done','done','done','done'],stageLabels:['Committed','Feeder Closed','Capital Called','Active'],
    metrics:[{v:'EGP 100,000',l:'Committed'},{v:'Nov 2024',l:'Date In'},{v:'9 yrs',l:'Lock-up'}]},
-  {abbr:'SH',name:'Shorooq Growth Fund II',sector:'Growth · 2024 Vintage',committed:'EGP 75,000',date:'Apr 2025',
+  {abbr:'SH',logoClass:'logo-sh',name:'Shorooq Growth Fund II',sector:'Growth · 2024 Vintage',committed:'EGP 75,000',date:'Apr 2025',
    status:'spv',statusLabel:'Feeder Closing',statusClass:'pcs-spv',
    stage:['done','current','',''],stageLabels:['Committed','Feeder Closing','Capital Call','Active'],
    metrics:[{v:'EGP 75,000',l:'Committed'},{v:'Apr 2025',l:'Date In'},{v:'Pending',l:'Capital Call'}]},
@@ -1143,7 +1151,7 @@ function renderFunds(){
     const urgent=f.daysLeft<=30;
     return`<div class="dcard" onclick="openFund(${f.id})">
       <div class="dc-top">
-        <div class="dc-logo">${f.abbr}</div>
+        <div class="dc-logo ${f.logoClass}">${f.abbr}</div>
         <div class="dc-badges">
           <span class="badge ${STRATEGY_CLASS[f.strategyKey]}">${STRATEGY_LABEL[f.strategyKey]}</span>
           <div class="dc-live"><div class="dc-live-dot"></div>Open</div>
@@ -1212,7 +1220,7 @@ function renderPositions(){
     return`<div class="pos-card">
       <div class="pc-top">
         <div style="display:flex;align-items:flex-start;gap:12px;flex:1">
-          <div class="pc-logo">${p.abbr}</div>
+          <div class="pc-logo ${p.logoClass||''}">${p.abbr}</div>
           <div class="pc-info">
             <div class="pc-name">${p.name}</div>
             <div class="pc-sector">${p.sector}</div>
@@ -1255,7 +1263,7 @@ function openFund(id){
 
     <div class="dr-content">
       <div class="dr-co-row">
-        <div class="dr-m-logo">${f.abbr}</div>
+        <div class="dr-m-logo ${f.logoClass}">${f.abbr}</div>
         <div>
           <div class="dr-m-name">${f.name}</div>
           <div class="dr-m-meta">${f.investors} LPs committed · ${f.daysLeft} days to close</div>
